@@ -613,3 +613,24 @@
     font-size: 0.875rem;
     margin: var(--space-lg) 0;
 }
+/* Case Study Images */
+.case-study-image {
+    width: 100%;
+    margin: var(--space-lg) 0;
+}
+
+.case-study-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+    font-size: 0.875rem;
+    color: var(--color-text-medium);
+    text-align: center;
+    margin-top: var(--space-sm);
+    font-style: italic;
+}
