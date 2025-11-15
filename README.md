@@ -1,0 +1,1 @@
+This should not, in any way, be looked at as an example of how to code a website. It is the result of an experiment using Claude and Claude Code to create a basic website. Take this code with a giant grain of salt.
