@@ -220,12 +220,9 @@ section {
     margin-bottom: var(--space-lg);
 }
 
-.hero-title .highlight {
-    background: linear-gradient(120deg, transparent 0%, var(--color-primary) 0%);
-    background-repeat: no-repeat;
-    background-size: 100% 30%;
-    background-position: 0 85%;
-    padding: 0 0.25rem;
+.hero-title .hero-accent {
+    color: #E63946;
+    font-weight: 700;
 }
 
 .hero-description {
