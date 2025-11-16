@@ -554,6 +554,7 @@ section {
 .contact-info {
     display: inline-block;
     text-align: left;
+    padding: 0 var(--space-md);
 }
 
 .contact-links {
