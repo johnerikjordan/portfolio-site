@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John-Erik Jordan - UX Designer</title>
+    <title>John-Erik Jordan - Product Designer</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Red Thread SVG Background Element -->
@@ -22,6 +22,11 @@
     <header class="site-header">
         <nav class="main-nav">
             <a href="index.html" class="logo">JOHN-ERIK JORDAN</a>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#work">Selected Work</a></li>
                 <li><a href="#about">About</a></li>
@@ -35,10 +40,10 @@
         <section class="hero">
             <div class="container">
                 <h1 class="hero-title">
-                    <span class="hero-accent">UX Design Leader</span> bridging strategic direction with hands-on execution.
+                    <span class="hero-accent">Product Design Leader</span> bridging strategic direction with hands-on execution.
                 </h1>
                 <p class="hero-description">
-                    I build and mentor design teams that drive measurable impact. 10+ years guiding UX strategy across 
+                    I build and mentor design teams that drive measurable impact. 10+ years guiding Product strategy across 
                     <span class="accent-text">EdTech, B2B SaaS, and enterprise platforms</span> — from team building and process improvement to design systems at scale.
                 </p>
             </div>
@@ -75,7 +80,7 @@
                                     How I helped a new startup increase its onboarding rate by 935%.
                                 </p>
                                 <div class="card-tags">
-                                    <span class="tag">UX Design</span>
+                                    <span class="tag">Product Design</span>
                                     <span class="tag">Product Strategy</span>
                                     <span class="tag">User Research</span>
                                 </div>
@@ -138,10 +143,10 @@
                     <div class="about-content">
                         <h2 class="section-title">About Me</h2>
                         <p>
-                            I'm a UX Design Leader with over a decade of experience building teams, scaling systems, and shaping strategy across B2B SaaS, EdTech, and enterprise platforms. I bridge strategic leadership with hands-on execution—combining 7+ years of team management with deep IC design skills.
+                            I'm a Product Design Leader with over a decade of experience building teams, scaling systems, and shaping strategy across B2B SaaS, EdTech, and enterprise platforms. I bridge strategic leadership with hands-on execution—combining 7+ years of team management with deep IC design skills.
                         </p>
                         <p>
-                           My leadership journey began in 2015 at Babbel, where I established the foundation for team development practices I still apply today: structured career paths, regular 1:1s, and feedback-driven cultures. Since then, I've scaled Babbel Magazine to millions of readers, led enterprise-scale design systems at STRATO AG, and built Smart Agency's first UX/UI team from scratch. Each role has sharpened my ability to balance strategic direction with the willingness to roll up my sleeves and design when needed.
+                           My leadership journey began in 2015 at Babbel, where I established the foundation for team development practices I still apply today: structured career paths, regular 1:1s, and feedback-driven cultures. Since then, I've scaled Babbel Magazine to millions of readers, led enterprise-scale design systems at STRATO AG, and built Smart Agency's first Product/UI team from scratch. Each role has sharpened my ability to balance strategic direction with the willingness to roll up my sleeves and design when needed.
                         </p>
 	                            Currently based in Berlin, I'm seeking leadership or senior design roles in organizations focused on education, climate, or public good – places where my strategic design initiatives can create meaningful impact.
 							</p>
@@ -155,7 +160,7 @@
 					        <ul class="skills-list">
 					            <li>Design Team Leadership & Mentorship</li>
 					            <li>Team Building from Scratch</li>
-					            <li>UX Strategy & Service Design</li>
+					            <li>Product Strategy & Service Design</li>
 					            <li>Process Improvement & Operations</li>
 					            <li>Cross-Functional Collaboration (Product, Engineering, C-level)</li>
 					        </ul>
@@ -212,5 +217,24 @@
             <p>&copy; 2025 John-Erik Jordan. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
