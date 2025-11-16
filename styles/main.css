@@ -466,6 +466,7 @@ section {
    ============================================ */
 .about {
     background: var(--color-background-alt);
+    padding: var(--space-md) 0;
 }
 
 .about-grid {
