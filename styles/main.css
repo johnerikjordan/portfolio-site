@@ -587,11 +587,12 @@ section {
     }
 
     .portfolio {
-        padding: var(--space-sm) 0;
+        padding-top: var(--space-md);
+        padding-bottom: var(--space-sm);
     }
 
     .portfolio .section-title {
-        margin-bottom: var(--space-md);
+        margin-bottom: var(--space-sm);
     }
 }
 
