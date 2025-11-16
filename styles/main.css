@@ -220,6 +220,8 @@ section {
 .hero-title {
     max-width: 900px;
     margin-bottom: var(--space-md);
+    line-height: 0.897;
+    letter-spacing: -0.02em;
 }
 
 .hero-title .hero-accent {
