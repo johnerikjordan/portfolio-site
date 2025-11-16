@@ -545,22 +545,28 @@ section {
 
 .contact-intro {
     font-size: 1.25rem;
-    max-width: 600px;
-    margin: 0 auto var(--space-md);
+    max-width: 100%;
+    margin: 0 0 var(--space-md);
     color: var(--color-text-medium);
+    text-align: left;
+}
+
+.contact-info {
+    display: inline-block;
+    text-align: left;
 }
 
 .contact-links {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-    align-items: center;
+    align-items: flex-start;
 }
 
 @media (min-width: 640px) {
     .contact-links {
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 
