@@ -492,7 +492,7 @@ section {
 }
 
 .skills-category {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
 }
 
 .skills-category:last-child {
@@ -520,7 +520,7 @@ section {
     color: var(--color-text-medium);
     font-weight: 500;
     position: relative;
-    line-height: 0.4;
+    line-height: 1.3;
 }
 
 .skills-list li::before {
