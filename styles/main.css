@@ -560,13 +560,13 @@ section {
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
-    align-items: flex-start;
+    align-items: center;
 }
 
 @media (min-width: 640px) {
     .contact-links {
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
     }
 }
 
