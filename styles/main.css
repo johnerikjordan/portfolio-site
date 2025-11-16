@@ -585,6 +585,14 @@ section {
     .red-thread-statement {
         padding: var(--space-lg) 0;
     }
+
+    .portfolio {
+        padding: var(--space-md) 0;
+    }
+
+    .portfolio .section-title {
+        margin-bottom: var(--space-sm);
+    }
 }
 
 @media (max-width: 767px) {
