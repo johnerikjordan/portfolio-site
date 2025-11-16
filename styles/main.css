@@ -483,7 +483,7 @@ section {
 }
 
 .about-content p {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.17;
     color: var(--color-text-medium);
 }
@@ -522,6 +522,7 @@ section {
     font-weight: 500;
     position: relative;
     line-height: 0.8;
+    font-size: 1rem;
 }
 
 .skills-list li::before {
