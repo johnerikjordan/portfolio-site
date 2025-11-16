@@ -183,6 +183,7 @@ section {
     letter-spacing: 0.05em;
     color: var(--color-text-dark);
     transition: color var(--transition-fast);
+    line-height: 0.8;
 }
 
 .logo:hover {
@@ -200,6 +201,7 @@ section {
     color: var(--color-text-medium);
     font-weight: 500;
     transition: color var(--transition-fast);
+    line-height: 0.8;
 }
 
 .nav-links a:hover {
