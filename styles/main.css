@@ -394,6 +394,7 @@ section {
     font-size: 1.5rem;
     margin-bottom: var(--space-xs);
     color: var(--color-text-dark);
+    line-height: 1.2;
 }
 
 .card-client {
