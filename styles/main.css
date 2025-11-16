@@ -581,6 +581,12 @@ section {
 /* ============================================
    RESPONSIVE UTILITIES
    ============================================ */
+@media (max-width: 999px) {
+    .red-thread-statement {
+        padding: var(--space-lg) 0;
+    }
+}
+
 @media (max-width: 767px) {
     .hero {
         padding-top: var(--space-lg);
