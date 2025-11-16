@@ -56,7 +56,7 @@ html {
 body {
     font-family: var(--font-primary);
     font-size: 1.125rem;
-    line-height: 0.85;
+    line-height: 1.105;
     color: var(--color-text-dark);
     background-color: var(--color-background);
     -webkit-font-smoothing: antialiased;
@@ -68,14 +68,14 @@ body {
    ============================================ */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
-    line-height: 0.6;
+    line-height: 0.72;
     margin-bottom: var(--space-xs);
 }
 
 h1 {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 400;
-    line-height: 0.65;
+    line-height: 0.78;
 }
 
 h2 {
@@ -227,7 +227,7 @@ section {
 
 .hero-description {
     font-size: 1.25rem;
-    line-height: 0.85;
+    line-height: 1.105;
     color: var(--color-text-medium);
     max-width: 800px;
     margin-bottom: var(--space-md);
@@ -402,7 +402,7 @@ section {
 
 .card-description {
     font-size: 1rem;
-    line-height: 0.8;
+    line-height: 1.04;
     color: var(--color-text-medium);
     margin-bottom: var(--space-md);
 }
@@ -445,7 +445,7 @@ section {
 
 .about-content p {
     font-size: 1.125rem;
-    line-height: 0.9;
+    line-height: 1.17;
     color: var(--color-text-medium);
 }
 
@@ -482,7 +482,7 @@ section {
     color: var(--color-text-medium);
     font-weight: 500;
     position: relative;
-    line-height: 1.0;
+    line-height: 0.4;
 }
 
 .skills-list li::before {
