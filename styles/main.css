@@ -652,6 +652,16 @@ section {
         max-width: calc(100vw - 5rem);
         word-break: break-word;
     }
+
+    .email-text-desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .email-text-mobile {
+        display: none;
+    }
 }
 
 /* ============================================
