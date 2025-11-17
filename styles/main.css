@@ -492,43 +492,31 @@ section {
     color: var(--color-text-medium);
 }
 
-/* Red Thread Ellipse Animation */
-.red-thread-ellipse {
+/* Red Thread Mini Animation */
+.red-thread-mini {
     display: none;
 }
 
 @media (min-width: 768px) {
-    .red-thread-ellipse {
+    .red-thread-mini {
         display: block;
         width: 100%;
-        max-width: 500px;
         height: auto;
         margin-top: var(--space-lg);
-        opacity: 0.5;
+        opacity: 0.4;
     }
 
-    .red-thread-ellipse ellipse {
-        animation: ellipseWave 15s ease-in-out infinite;
-        transform-origin: center;
+    .red-thread-mini path {
+        animation: threadFlowMini 18s ease-in-out infinite;
     }
 }
 
-@keyframes ellipseWave {
+@keyframes threadFlowMini {
     0%, 100% {
-        rx: 230;
-        ry: 130;
-    }
-    25% {
-        rx: 220;
-        ry: 135;
+        d: path("M-20,50 C80,30 120,40 160,50 S240,55 320,60 C360,62 400,70 480,50 S560,65 640,75");
     }
     50% {
-        rx: 235;
-        ry: 125;
-    }
-    75% {
-        rx: 225;
-        ry: 132;
+        d: path("M-20,60 C80,45 120,50 160,55 S240,47 320,50 C360,52 400,60 480,70 S560,60 640,65");
     }
 }
 
