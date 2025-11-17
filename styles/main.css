@@ -615,6 +615,13 @@ section {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 767px) {
+    .contact-link.email {
+        max-width: calc(100vw - 5rem);
+        word-break: break-word;
+    }
+}
+
 /* ============================================
    FOOTER
    ============================================ */
