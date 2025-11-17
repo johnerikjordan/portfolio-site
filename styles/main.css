@@ -482,10 +482,54 @@ section {
     }
 }
 
+.about-content {
+    position: relative;
+}
+
 .about-content p {
     font-size: 1.25rem;
     line-height: 1.17;
     color: var(--color-text-medium);
+}
+
+/* Red Thread Ellipse Animation */
+.red-thread-ellipse {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .red-thread-ellipse {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin-top: var(--space-lg);
+        opacity: 0.5;
+    }
+
+    .red-thread-ellipse ellipse {
+        animation: ellipseWave 15s ease-in-out infinite;
+        transform-origin: center;
+    }
+}
+
+@keyframes ellipseWave {
+    0%, 100% {
+        rx: 230;
+        ry: 130;
+    }
+    25% {
+        rx: 220;
+        ry: 135;
+    }
+    50% {
+        rx: 235;
+        ry: 125;
+    }
+    75% {
+        rx: 225;
+        ry: 132;
+    }
 }
 
 .about-skills h3 {
