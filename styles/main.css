@@ -482,10 +482,42 @@ section {
     }
 }
 
+.about-content {
+    position: relative;
+}
+
 .about-content p {
     font-size: 1.25rem;
     line-height: 1.17;
     color: var(--color-text-medium);
+}
+
+/* Red Thread Mini Animation */
+.red-thread-mini {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .red-thread-mini {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-top: var(--space-lg);
+        opacity: 0.4;
+    }
+
+    .red-thread-mini path {
+        animation: threadFlowMini 18s ease-in-out infinite;
+    }
+}
+
+@keyframes threadFlowMini {
+    0%, 100% {
+        d: path("M-20,50 C80,30 120,40 160,50 S240,55 320,60 C360,62 400,70 480,50 S560,65 640,75");
+    }
+    50% {
+        d: path("M-20,60 C80,45 120,50 160,55 S240,47 320,50 C360,52 400,60 480,70 S560,60 640,65");
+    }
 }
 
 .about-skills h3 {
@@ -521,7 +553,7 @@ section {
     color: var(--color-text-medium);
     font-weight: 500;
     position: relative;
-    line-height: 0.8;
+    line-height: 0.9;
     font-size: 1rem;
 }
 
@@ -541,21 +573,33 @@ section {
    CONTACT SECTION
    ============================================ */
 .contact {
-    text-align: center;
+    padding: 1.8rem 0;
 }
 
-.contact-intro {
-    font-size: 1.25rem;
-    max-width: 100%;
-    margin: 0 0 var(--space-md);
-    color: var(--color-text-medium);
-    text-align: left;
+@media (min-width: 768px) {
+    .contact {
+        padding: 2.4rem 0;
+    }
 }
 
-.contact-info {
-    display: inline-block;
-    text-align: left;
-    padding: 0 var(--space-md);
+.contact .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .contact .container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-lg);
+    }
+}
+
+.contact .section-title {
+    margin-bottom: 0;
 }
 
 .contact-links {
@@ -565,10 +609,9 @@ section {
     align-items: center;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
     .contact-links {
         flex-direction: row;
-        justify-content: center;
     }
 }
 
@@ -602,6 +645,23 @@ section {
 .contact-link.email:hover {
     background: #2a2a2a;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 767px) {
+    .contact-link.email {
+        max-width: calc(100vw - 5rem);
+        word-break: break-word;
+    }
+
+    .email-text-desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .email-text-mobile {
+        display: none;
+    }
 }
 
 /* ============================================
