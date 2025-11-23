@@ -54,7 +54,7 @@
 
 .hero-subtitle {
     font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-snug);
     color: var(--color-text-medium);
     max-width: 800px;
     margin-bottom: var(--space-lg);
@@ -102,7 +102,7 @@
 
 .intro-text {
     font-size: var(--text-xl);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-snug);
     color: var(--color-text-medium);
 }
 
@@ -199,7 +199,7 @@
 
 .problem-description {
     color: var(--color-text-medium);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-snug);
     margin-bottom: var(--space-md);
 }
 
@@ -233,14 +233,14 @@
 .lead-text {
     font-size: var(--text-2xl);
     font-weight: var(--font-medium);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-snug);
     margin-bottom: var(--space-md);
     color: var(--color-text-dark);
 }
 
 .rationale {
     font-size: var(--text-lg);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-snug);
     color: var(--color-text-medium);
 }
 
@@ -334,7 +334,7 @@
 
 .challenge-text {
     font-size: var(--text-lg);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-snug);
     color: var(--color-text-medium);
     margin-bottom: var(--space-md);
 }
@@ -355,7 +355,7 @@
 
 .big-text {
     font-size: var(--text-2xl);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-snug);
     color: var(--color-text-dark);
 }
 
@@ -397,7 +397,7 @@
 
 .stat-label {
     font-size: var(--text-lg);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-snug);
     color: var(--color-text-medium);
 }
 
@@ -416,13 +416,13 @@
 
 .insight-box p {
     color: var(--color-text-medium);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-snug);
     margin: 0;
 }
 
 .reframe-text {
     font-size: var(--text-lg);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-snug);
     color: var(--color-text-medium);
     margin-bottom: var(--space-md);
 }
@@ -488,7 +488,7 @@
 
 .timeline-content p {
     color: rgba(255, 255, 255, 0.9);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-snug);
     margin-bottom: var(--space-sm);
 }
 
@@ -565,7 +565,7 @@
 
 .takeaway-item p {
     color: var(--color-text-medium);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-snug);
     margin: 0;
 }
 
