@@ -30,13 +30,13 @@
     align-items: center;
     gap: var(--space-sm);
     margin-bottom: var(--space-md);
-    font-size: 0.875rem;
+    font-size: var(--text-sm);
     color: var(--color-text-medium);
 }
 
 .client-name {
     color: var(--color-primary);
-    font-weight: 600;
+    font-weight: var(--font-semibold);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -47,14 +47,14 @@
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(var(--text-4xl), 6vw, var(--text-7xl));
     margin-bottom: var(--space-md);
-    font-weight: 700;
+    font-weight: var(--font-bold);
 }
 
 .hero-subtitle {
-    font-size: clamp(1.25rem, 3vw, 1.75rem);
-    line-height: 1.5;
+    font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+    line-height: var(--leading-relaxed);
     color: var(--color-text-medium);
     max-width: 800px;
     margin-bottom: var(--space-lg);
@@ -62,11 +62,11 @@
 
 .highlight-stat {
     color: var(--color-primary);
-    font-weight: 700;
+    font-weight: var(--font-bold);
 }
 
 .hero-role {
-    font-size: 1rem;
+    font-size: var(--text-base);
     color: var(--color-text-medium);
 }
 
@@ -88,9 +88,9 @@
 }
 
 .section-heading {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
     margin-bottom: var(--space-lg);
-    font-weight: 600;
+    font-weight: var(--font-semibold);
 }
 
 /* ============================================
@@ -101,8 +101,8 @@
 }
 
 .intro-text {
-    font-size: 1.25rem;
-    line-height: 2.34;
+    font-size: var(--text-xl);
+    line-height: var(--leading-relaxed);
     color: var(--color-text-medium);
 }
 
@@ -166,15 +166,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-weight: var(--font-bold);
+    font-size: var(--text-2xl);
     margin-bottom: var(--space-md);
 }
 
 .problem-title {
-    font-size: 1.25rem;
+    font-size: var(--text-xl);
     margin-bottom: var(--space-md);
-    line-height: 1.56;
+    line-height: var(--leading-normal);
 }
 
 .problem-details {
@@ -186,7 +186,7 @@
     padding: var(--space-xs) 0;
     padding-left: var(--space-md);
     position: relative;
-    line-height: 0.4;
+    line-height: var(--leading-normal);
 }
 
 .problem-details li::before {
@@ -199,7 +199,7 @@
 
 .problem-description {
     color: var(--color-text-medium);
-    line-height: 2.21;
+    line-height: var(--leading-relaxed);
     margin-bottom: var(--space-md);
 }
 
@@ -212,7 +212,7 @@
 .user-quotes blockquote {
     font-style: italic;
     color: var(--color-text-light);
-    font-size: 0.9rem;
+    font-size: var(--text-sm);
     padding-left: var(--space-md);
     border-left: 2px solid var(--color-border);
     margin: 0;
@@ -231,16 +231,16 @@
 }
 
 .lead-text {
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.95;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-medium);
+    line-height: var(--leading-relaxed);
     margin-bottom: var(--space-md);
     color: var(--color-text-dark);
 }
 
 .rationale {
-    font-size: 1.125rem;
-    line-height: 2.21;
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
     color: var(--color-text-medium);
 }
 
@@ -264,15 +264,15 @@
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: 1.25rem;
+    font-weight: var(--font-bold);
+    font-size: var(--text-xl);
     margin-bottom: var(--space-md);
 }
 
 .proposal-title {
-    font-size: 1.5rem;
+    font-size: var(--text-2xl);
     margin-bottom: var(--space-md);
-    line-height: 1.56;
+    line-height: var(--leading-normal);
 }
 
 .proposal-reasons,
@@ -282,8 +282,8 @@
 
 .proposal-reasons h4,
 .proposal-implementation p strong {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
     color: var(--color-text-dark);
     margin-bottom: var(--space-sm);
 }
@@ -300,7 +300,7 @@
     padding-left: var(--space-md);
     position: relative;
     color: var(--color-text-medium);
-    line-height: 0.64;
+    line-height: var(--leading-normal);
 }
 
 .proposal-reasons li::before,
@@ -317,7 +317,7 @@
     padding: var(--space-md);
     background: var(--color-background-alt);
     border-radius: var(--border-radius);
-    font-size: 0.95rem;
+    font-size: var(--text-sm);
 }
 
 /* ============================================
@@ -333,8 +333,8 @@
 }
 
 .challenge-text {
-    font-size: 1.125rem;
-    line-height: 2.34;
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
     color: var(--color-text-medium);
     margin-bottom: var(--space-md);
 }
@@ -349,13 +349,13 @@
 }
 
 .challenge-outcome h3 {
-    font-size: 1.25rem;
+    font-size: var(--text-xl);
     margin-bottom: var(--space-md);
 }
 
 .big-text {
-    font-size: 1.5rem;
-    line-height: 1.82;
+    font-size: var(--text-2xl);
+    line-height: var(--leading-relaxed);
     color: var(--color-text-dark);
 }
 
@@ -389,15 +389,15 @@
 
 .stat-number {
     font-size: 5rem;
-    font-weight: 700;
+    font-weight: var(--font-bold);
     color: var(--color-primary);
     line-height: 1;
     margin-bottom: var(--space-md);
 }
 
 .stat-label {
-    font-size: 1.125rem;
-    line-height: 2.08;
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
     color: var(--color-text-medium);
 }
 
@@ -409,20 +409,20 @@
 }
 
 .insight-box h4 {
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
     margin-bottom: var(--space-sm);
 }
 
 .insight-box p {
     color: var(--color-text-medium);
-    line-height: 2.21;
+    line-height: var(--leading-relaxed);
     margin: 0;
 }
 
 .reframe-text {
-    font-size: 1.125rem;
-    line-height: 2.34;
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
     color: var(--color-text-medium);
     margin-bottom: var(--space-md);
 }
@@ -481,19 +481,19 @@
 
 .timeline-content h4 {
     color: white;
-    font-size: 1.125rem;
+    font-size: var(--text-lg);
     margin-bottom: var(--space-sm);
-    font-weight: 600;
+    font-weight: var(--font-semibold);
 }
 
 .timeline-content p {
     color: rgba(255, 255, 255, 0.9);
-    line-height: 2.21;
+    line-height: var(--leading-relaxed);
     margin-bottom: var(--space-sm);
 }
 
 .timeline-content .detail {
-    font-size: 0.95rem;
+    font-size: var(--text-sm);
     color: rgba(255, 255, 255, 0.7);
 }
 
@@ -519,7 +519,7 @@
 }
 
 .stat-description {
-    font-size: 1.25rem;
+    font-size: var(--text-xl);
     color: rgba(255, 255, 255, 0.95);
     max-width: 500px;
     margin: 0 auto;
@@ -558,14 +558,14 @@
 }
 
 .takeaway-item h4 {
-    font-size: 1.125rem;
+    font-size: var(--text-lg);
     margin-bottom: var(--space-sm);
     color: var(--color-primary);
 }
 
 .takeaway-item p {
     color: var(--color-text-medium);
-    line-height: 2.21;
+    line-height: var(--leading-relaxed);
     margin: 0;
 }
 
@@ -590,7 +590,7 @@
 }
 
 .next-label {
-    font-size: 0.875rem;
+    font-size: var(--text-sm);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: rgba(255, 255, 255, 0.6);
@@ -598,7 +598,7 @@
 }
 
 .next-title {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(var(--text-2xl), 3vw, var(--text-3xl));
     color: white;
     margin: 0;
 }
@@ -610,32 +610,32 @@
     .case-study-hero {
         padding-top: var(--space-lg);
     }
-    
+
     .hero-title {
-        font-size: 2rem;
+        font-size: var(--text-3xl);
     }
-    
+
     .hero-subtitle {
-        font-size: 1.125rem;
+        font-size: var(--text-lg);
     }
-    
+
     .problem-grid,
     .takeaways-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .proposal-item {
         padding-left: var(--space-md);
     }
-    
+
     .stat-number {
-        font-size: 3.5rem;
+        font-size: var(--text-6xl);
     }
-    
+
     .stat-number.large {
-        font-size: 4rem;
+        font-size: var(--text-7xl);
     }
-    
+
     .timeline-item {
         padding-left: var(--space-lg);
     }
@@ -654,7 +654,7 @@
     align-items: center;
     justify-content: center;
     color: var(--color-text-light);
-    font-size: 0.875rem;
+    font-size: var(--text-sm);
     margin: var(--space-lg) 0;
 }
 /* Case Study Images */
@@ -672,7 +672,7 @@
 }
 
 .image-caption {
-    font-size: 0.875rem;
+    font-size: var(--text-sm);
     color: var(--color-text-medium);
     text-align: center;
     margin-top: var(--space-sm);
