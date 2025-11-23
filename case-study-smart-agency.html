@@ -405,6 +405,139 @@
                 navLinks.classList.remove('active');
             });
         });
+
+        // Lightbox functionality
+        (function() {
+            // Create lightbox HTML
+            const lightboxHTML = `
+                <div class="lightbox" id="lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox"></button>
+                    <div class="lightbox-content">
+                        <div class="lightbox-image-container" id="lightbox-container">
+                            <img class="lightbox-image" id="lightbox-image" src="" alt="">
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxContainer = document.getElementById('lightbox-container');
+            const closeBtn = document.querySelector('.lightbox-close');
+
+            let isDragging = false;
+            let startX, startY, scrollLeft, scrollTop;
+
+            // Open lightbox when clicking case study images
+            document.querySelectorAll('.case-study-image img').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImage.src = img.src;
+                    lightboxImage.alt = img.alt;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    lightboxContainer.classList.remove('zoomed');
+                });
+            });
+
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+                lightboxContainer.classList.remove('zoomed');
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            // Close on ESC key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+
+            // Close when clicking outside the image
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target === lightboxContainer) {
+                    if (!lightboxContainer.classList.contains('zoomed')) {
+                        closeLightbox();
+                    }
+                }
+            });
+
+            // Toggle zoom on image click
+            lightboxImage.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (lightboxContainer.classList.contains('zoomed')) {
+                    lightboxContainer.classList.remove('zoomed');
+                    lightboxContainer.scrollTo(0, 0);
+                } else {
+                    lightboxContainer.classList.add('zoomed');
+                    // Center the scroll position
+                    setTimeout(() => {
+                        const scrollX = (lightboxContainer.scrollWidth - lightboxContainer.clientWidth) / 2;
+                        const scrollY = (lightboxContainer.scrollHeight - lightboxContainer.clientHeight) / 2;
+                        lightboxContainer.scrollTo(scrollX, scrollY);
+                    }, 50);
+                }
+            });
+
+            // Drag functionality when zoomed
+            lightboxContainer.addEventListener('mousedown', (e) => {
+                if (!lightboxContainer.classList.contains('zoomed')) return;
+                isDragging = true;
+                lightboxContainer.classList.add('dragging');
+                startX = e.pageX - lightboxContainer.offsetLeft;
+                startY = e.pageY - lightboxContainer.offsetTop;
+                scrollLeft = lightboxContainer.scrollLeft;
+                scrollTop = lightboxContainer.scrollTop;
+            });
+
+            lightboxContainer.addEventListener('mouseleave', () => {
+                isDragging = false;
+                lightboxContainer.classList.remove('dragging');
+            });
+
+            lightboxContainer.addEventListener('mouseup', () => {
+                isDragging = false;
+                lightboxContainer.classList.remove('dragging');
+            });
+
+            lightboxContainer.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - lightboxContainer.offsetLeft;
+                const y = e.pageY - lightboxContainer.offsetTop;
+                const walkX = (x - startX) * 1.5;
+                const walkY = (y - startY) * 1.5;
+                lightboxContainer.scrollLeft = scrollLeft - walkX;
+                lightboxContainer.scrollTop = scrollTop - walkY;
+            });
+
+            // Touch support for mobile
+            lightboxContainer.addEventListener('touchstart', (e) => {
+                if (!lightboxContainer.classList.contains('zoomed')) return;
+                isDragging = true;
+                startX = e.touches[0].pageX - lightboxContainer.offsetLeft;
+                startY = e.touches[0].pageY - lightboxContainer.offsetTop;
+                scrollLeft = lightboxContainer.scrollLeft;
+                scrollTop = lightboxContainer.scrollTop;
+            });
+
+            lightboxContainer.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+
+            lightboxContainer.addEventListener('touchmove', (e) => {
+                if (!isDragging || !lightboxContainer.classList.contains('zoomed')) return;
+                const x = e.touches[0].pageX - lightboxContainer.offsetLeft;
+                const y = e.touches[0].pageY - lightboxContainer.offsetTop;
+                const walkX = (x - startX) * 1.5;
+                const walkY = (y - startY) * 1.5;
+                lightboxContainer.scrollLeft = scrollLeft - walkX;
+                lightboxContainer.scrollTop = scrollTop - walkY;
+            });
+        })();
     </script>
 </body>
 </html>
