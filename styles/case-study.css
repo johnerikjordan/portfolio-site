@@ -22,7 +22,36 @@
 .case-study-hero {
     padding-top: var(--space-xxl);
     padding-bottom: var(--space-xl);
-    background: var(--color-background-alt);
+    background-color: var(--color-background-alt);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.case-study-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 0;
+}
+
+.case-study-hero > .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Case study specific backgrounds */
+.case-study-hero--smart-agency {
+    background-image: url('../images/smart-agency-hero.jpg');
+}
+
+.case-study-hero--strato {
+    background-image: url('../images/strato-hero.jpg');
 }
 
 .hero-meta {
@@ -46,10 +75,11 @@
 }
 
 .hero-title {
-    font-family: var(--font-display);
-    font-size: clamp(var(--text-4xl), 6vw, var(--text-7xl));
+    font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+    font-weight: var(--font-normal);
     margin-bottom: var(--space-md);
-    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
@@ -612,7 +642,7 @@
     }
 
     .hero-title {
-        font-size: var(--text-3xl);
+        font-size: var(--text-2xl);
     }
 
     .hero-subtitle {
