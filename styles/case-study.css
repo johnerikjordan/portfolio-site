@@ -45,6 +45,22 @@
     z-index: 1;
 }
 
+.case-study-hero .hero-meta,
+.case-study-hero .hero-title,
+.case-study-hero .hero-subtitle,
+.case-study-hero .hero-role {
+    max-width: 50%;
+}
+
+@media (max-width: 1023px) {
+    .case-study-hero .hero-meta,
+    .case-study-hero .hero-title,
+    .case-study-hero .hero-subtitle,
+    .case-study-hero .hero-role {
+        max-width: 67%;
+    }
+}
+
 /* Case study specific backgrounds */
 .case-study-hero--smart-agency {
     background-image: url('../images/smart-agency-hero.jpg');
