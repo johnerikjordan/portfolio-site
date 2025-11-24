@@ -70,6 +70,10 @@
     background-image: url('../images/strato-hero.jpg');
 }
 
+.case-study-hero--babbel {
+    background-image: url('../images/babbel-hero.jpg');
+}
+
 .hero-meta {
     display: flex;
     align-items: center;
