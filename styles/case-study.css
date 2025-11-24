@@ -58,7 +58,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
     font-size: var(--text-sm);
     color: var(--color-text-medium);
 }
@@ -77,7 +77,7 @@
 .hero-title {
     font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
     font-weight: var(--font-normal);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
     line-height: var(--leading-tight);
     letter-spacing: -0.02em;
 }
@@ -87,7 +87,7 @@
     line-height: var(--leading-snug);
     color: var(--color-text-medium);
     max-width: 800px;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
 }
 
 .highlight-stat {
