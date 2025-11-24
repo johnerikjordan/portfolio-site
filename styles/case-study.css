@@ -20,8 +20,8 @@
    CASE STUDY HERO
    ============================================ */
 .case-study-hero {
-    padding-top: var(--space-xxl);
-    padding-bottom: var(--space-xl);
+    padding-top: calc(var(--space-xxl) * 2);
+    padding-bottom: calc(var(--space-xxl) * 1.5);
     background-color: var(--color-background-alt);
     background-size: cover;
     background-position: center;
@@ -75,7 +75,7 @@
 }
 
 .hero-title {
-    font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+    font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
     font-weight: var(--font-normal);
     margin-bottom: var(--space-lg);
     line-height: var(--leading-tight);
@@ -642,7 +642,7 @@
     }
 
     .hero-title {
-        font-size: var(--text-2xl);
+        font-size: var(--text-3xl);
     }
 
     .hero-subtitle {
