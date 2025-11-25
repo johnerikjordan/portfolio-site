@@ -74,6 +74,10 @@
     background-image: url('../images/babbel-hero.jpg');
 }
 
+.case-study-hero--inpera {
+    background-image: url('../images/inpera-hero.jpg');
+}
+
 .hero-meta {
     display: flex;
     align-items: center;
