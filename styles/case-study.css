@@ -78,6 +78,10 @@
     background-image: url('../images/inpera-hero.jpg');
 }
 
+.case-study-hero--design-system {
+    background-image: url('../images/design-system-hero.jpg');
+}
+
 .hero-meta {
     display: flex;
     align-items: center;

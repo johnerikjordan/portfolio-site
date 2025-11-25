@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System Evolution Case Study - John-Erik Jordan</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/case-study.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="case-study-page">
+
+    <header class="site-header">
+        <nav class="main-nav">
+            <a href="index.html" class="logo">JOHN-ERIK JORDAN</a>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html#work">← Back to Work</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="case-study-hero case-study-hero--design-system">
+            <div class="container">
+                <div class="hero-meta">
+                    <span class="client-name">STRATO</span>
+                    <span class="divider">•</span>
+                    <span class="timeframe">2020 – 2024</span>
+                </div>
+                <h1 class="hero-title">Design System Evolution</h1>
+                <p class="hero-subtitle">
+                    Building and scaling a comprehensive design system across products.
+                </p>
+                <div class="hero-role">
+                    <strong>My role:</strong> Design Systems Lead
+                </div>
+            </div>
+        </section>
+
+        <!-- Coming Soon Section -->
+        <section class="case-study-section context-section" style="padding: calc(var(--space-xxl) * 3) 0;">
+            <div class="container">
+                <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <h2 style="font-size: var(--text-4xl); margin-bottom: var(--space-lg); color: var(--color-primary);">
+                        Coming Soon
+                    </h2>
+                    <p class="intro-text">
+                        This case study is currently in development. Check back soon for insights on building and scaling design systems across enterprise products.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Project Navigation -->
+        <section class="next-project">
+            <div class="container">
+                <a href="case-study-babbel.html" class="next-project-link">
+                    <div class="next-label">Next Project</div>
+                    <h3 class="next-title">Journey Toward Design Leadership at Babbel →</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 John-Erik Jordan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
