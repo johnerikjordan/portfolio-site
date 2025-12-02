@@ -573,7 +573,7 @@ section {
 
 .skills-list li {
     padding: 0.275rem 0;
-    padding-left: var(--space-md);
+    padding-left: calc(var(--space-md) + 0.5rem);
     color: var(--color-text-medium);
     font-weight: var(--font-medium);
     position: relative;
