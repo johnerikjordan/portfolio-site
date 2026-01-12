@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design System Evolution Case Study - John-Erik Jordan</title>
+    <title>Building a Design System That Scaled to 10 Brands - John-Erik Jordan</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/case-study.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,27 +34,628 @@
                 <div class="hero-meta">
                     <span class="client-name">STRATO</span>
                     <span class="divider">•</span>
-                    <span class="timeframe">2020 – 2024</span>
+                    <span class="timeframe">June 2023 – August 2024</span>
                 </div>
-                <h1 class="hero-title">Design System Evolution</h1>
+                <h1 class="hero-title">Building a Design System That Scaled to 10 Brands</h1>
                 <p class="hero-subtitle">
-                    Building and scaling a comprehensive design system across products.
+                    How STRATO's tokenized design system became the Ionos Group standard
                 </p>
                 <div class="hero-role">
-                    <strong>My role:</strong> Design Systems Lead
+                    <strong>My role:</strong> Lead UI Designer, Design System Orchestrator
                 </div>
             </div>
         </section>
 
-        <!-- Coming Soon Section -->
-        <section class="case-study-section context-section" style="padding: calc(var(--space-xxl) * 3) 0;">
+        <!-- Quick Stats -->
+        <section class="case-study-section" style="background: var(--color-background);">
             <div class="container">
-                <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-                    <h2 style="font-size: var(--text-4xl); margin-bottom: var(--space-lg); color: var(--color-primary);">
-                        Coming Soon
-                    </h2>
-                    <p class="intro-text">
-                        This case study is currently in development. Check back soon for insights on building and scaling design systems across enterprise products.
+                <div class="takeaways-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div class="takeaway-item">
+                        <h4>Timeline</h4>
+                        <p><strong>14 months</strong><br>June 2023 - August 2024</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <h4>Team Evolution</h4>
+                        <p><strong>6 designers → 3 core team</strong><br>Cross-brand adoption</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <h4>Component Efficiency</h4>
+                        <p><strong>40% reduction</strong><br>in duplicates</p>
+                    </div>
+                    <div class="takeaway-item">
+                        <h4>Ultimate Outcome</h4>
+                        <p><strong>Ionos Group standard</strong><br>across 10 brands</p>
+                    </div>
+                </div>
+
+                <div class="case-study-image-placeholder" style="margin-top: var(--space-xl);">
+                    [Placeholder image: Split-screen or before/after comparison. LEFT: Scattered chaos showing multiple deprecated Figma files, inconsistent components, siloed work. RIGHT: Unified system showing single source of truth serving multiple platforms with Variable Modes. Should immediately communicate "chaos to order" transformation.]
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: The Challenge -->
+        <section class="case-study-section" style="background: var(--color-background-alt);">
+            <div class="container">
+                <h2 class="section-heading">The Challenge</h2>
+
+                <h3 class="proposal-title">The Situation</h3>
+                <p class="reframe-text">
+                    When I joined STRATO as Lead UI Designer in May 2023, the design team of six was drowning in inefficiency. Every designer had their own way of organizing components—some maintained personal master files, others created new files for every ticket. Three partially-finished pattern libraries sat deprecated and unmaintained, abandoned the moment they were "finished."
+                </p>
+
+                <h3 class="proposal-title" style="margin-top: var(--space-xl);">The Cost</h3>
+                <p class="reframe-text">The chaos had real consequences:</p>
+
+                <div class="problem-grid" style="margin-top: var(--space-lg);">
+                    <div class="problem-item">
+                        <div class="problem-item-content">
+                            <h4 class="problem-title">Wasted Resources</h4>
+                            <p class="problem-description">
+                                Designers were accidentally rebuilding components that already existed, buried in someone else's files
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item">
+                        <div class="problem-item-content">
+                            <h4 class="problem-title">Missed Deadlines</h4>
+                            <p class="problem-description">
+                                Design-dependent tickets routinely spilled over sprints because time estimates didn't account for duplicate work
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item">
+                        <div class="problem-item-content">
+                            <h4 class="problem-title">Siloed Teams</h4>
+                            <p class="problem-description">
+                                Engineers in different product streams (web portal, control panel, cloud storage) had drifted into incompatible tech stacks, forcing designers to bridge huge technical gaps
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item">
+                        <div class="problem-item-content">
+                            <h4 class="problem-title">Professional Credibility</h4>
+                            <p class="problem-description">
+                                The design team was seen as the bottleneck in the development cycle
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-image-placeholder">
+                    [Placeholder image: Screenshot montage showing the chaotic starting state - multiple deprecated pattern libraries, inconsistent versions of the same component scattered across files, abandoned Figma projects. Consider annotating with arrows or highlights pointing to specific problems.]
+                </div>
+
+                <h3 class="proposal-title" style="margin-top: var(--space-xl);">Why Previous Attempts Failed</h3>
+                <p class="reframe-text">
+                    My predecessors had tried to solve this with documentation—style guides, pattern libraries, usage instructions. But manual documentation fell out of date immediately. What we needed wasn't more documentation; we needed a system that <strong>enforced consistency automatically</strong> and <strong>adapted to different technical requirements without manual intervention.</strong>
+                </p>
+                <p class="reframe-text">
+                    The breakthrough came from timing: STRATO had just fully migrated to Figma, and Figma was about to release the tool we needed.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: The Opportunity -->
+        <section class="case-study-section proposal-section">
+            <div class="container">
+                <h2 class="section-heading">The Opportunity</h2>
+
+                <h3 class="proposal-title">Research & Vision</h3>
+                <p class="reframe-text">
+                    Even before starting at STRATO, I'd been researching design tokens and their potential to transform productivity. During my interviews, I talked about this vision with the design team—and I could see that two designers (David Dutschke and Chris Stüberitz, both juniors interested in code) were energized by the idea.
+                </p>
+                <p class="reframe-text">
+                    The timing was perfect: STRATO had just fully migrated to Figma, giving us—for the first time—a single platform where all designers could collaborate.
+                </p>
+
+                <h3 class="proposal-title" style="margin-top: var(--space-xl);">The Missing Piece</h3>
+                <p class="reframe-text">
+                    Initially, we planned to use a third-party plugin for design tokens. But between our first and second workshop with engineers, <strong>Figma released Variables</strong>—their native design tokens implementation. This was the breakthrough we needed: a scalable, Figma-native solution that could serve multiple tech stacks from a single source of truth.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 3: The Process -->
+        <section class="case-study-section" style="background: var(--color-background-alt);">
+            <div class="container">
+                <h2 class="section-heading">The Process</h2>
+
+                <div class="proposal-grid">
+                    <!-- Phase 0: Alignment -->
+                    <div class="proposal-item">
+                        <div class="proposal-number">0</div>
+                        <h3 class="proposal-title">Phase 0: Alignment (Week 2)</h3>
+                        <p class="reframe-text">
+                            Two weeks after starting, I facilitated an all-day workshop bringing together designers, engineers, and product owners across all product streams. <strong>Most people in that room had never met before</strong>—that's how siloed we were.
+                        </p>
+
+                        <div class="case-study-image-placeholder">
+                            [Placeholder image: Either a workshop photo showing the cross-functional team collaborating at whiteboards, OR a diagram showing the stakeholder map - 6 designers, 6 engineering leads (web portal, control panel, servers control panel, cloud storage web/iOS/Android), 5 POs, connected by lines showing previously broken connections now being formed.]
+                        </div>
+
+                        <div class="proposal-reasons">
+                            <h4>Workshop Outcomes:</h4>
+                            <ul>
+                                <li>Commitment from one engineering lead per team (6 teams total)</li>
+                                <li>Agreement on atomic naming conventions (primitive → semantic → component)</li>
+                                <li>Realization that our single source of truth had to be <strong>in Figma</strong>, not code (incompatible tech stacks)</li>
+                                <li>Uncovered that engineers across teams weren't talking to each other—kickstarted cross-team technical alignment</li>
+                            </ul>
+                        </div>
+
+                        <div class="insight-box" style="margin-top: var(--space-lg);">
+                            <h4>The Resistance</h4>
+                            <p>
+                                Not everyone was convinced. Some engineers remembered past abandoned attempts at design systems and were skeptical this would be any different. But I didn't need everyone on board—I only needed <strong>one point of contact per engineering team</strong> for the project to get started. The skeptics came around when they saw their colleagues' support for the project and monthly progress demonstrations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 1: Audit & Consolidation -->
+                    <div class="proposal-item">
+                        <div class="proposal-number">1</div>
+                        <h3 class="proposal-title">Phase 1: Audit & Consolidation (Months 1-3)</h3>
+                        <p class="reframe-text">
+                            All six designers conducted an audit of components in their respective platform areas. We created our first unified Figma file containing <strong>all versions of all components from every STRATO platform</strong>.
+                        </p>
+
+                        <div class="case-study-image-placeholder">
+                            [Placeholder image: Before/after of component audit. BEFORE: Chaotic inventory showing duplicate buttons, cards, inputs with slight variations and no organization. AFTER: Organized, categorized component inventory with clear grouping and version control.]
+                        </div>
+
+                        <p class="reframe-text">
+                            Then we hit a coordination bottleneck: trying to consolidate components across platforms with all six designers was too slow. I reduced the core design system team to three (myself, David, and Chris) so we could move faster.
+                        </p>
+
+                        <div class="insight-box" style="margin-top: var(--space-lg);">
+                            <h4>Strategic Constraint: EAA Accessibility Deadline</h4>
+                            <p>
+                                Parallel to this project, we were preparing for the European Accessibility Act (June 2026 deadline). This hard deadline actually <strong>focused our priorities</strong>: we tackled typography, type scales, and colors first, since getting brand color changes approved—even for accessibility—had a long approval timeline.
+                            </p>
+                        </div>
+
+                        <div class="insight-box" style="margin-top: var(--space-lg);">
+                            <h4>Resource Reality</h4>
+                            <p>
+                                The design system was never anyone's main project. All three of us still had regular design duties in our respective product streams. This constant time and resource pressure meant we had to be strategic: <strong>we used the highest-priority sprint deliverables to determine what to refactor in the design system next.</strong>
+                            </p>
+                            <p style="margin-top: var(--space-sm);">
+                                For example, when the web portal team needed to migrate to a new CMS, they had to refactor price card components. Price cards appeared prominently on every product offer page in comparison carousels. That external pressure became a perfect opportunity to focus on the complex UI of nested components as a design system priority.
+                            </p>
+                            <p style="margin-top: var(--space-sm);">
+                                This "zigzag path" kept the design system relevant and useful instead of becoming an ivory tower project.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2: Foundation Building -->
+                    <div class="proposal-item">
+                        <div class="proposal-number">2</div>
+                        <h3 class="proposal-title">Phase 2: Foundation Building (Months 4-8)</h3>
+                        <p class="reframe-text">
+                            Following atomic design principles and <a href="https://www.uxpin.com/studio/blog/design-system-naming-conventions/" target="_blank" rel="noopener">naming convention best practices</a>, we built our token architecture:
+                        </p>
+
+                        <div class="insight-box" style="margin-top: var(--space-lg); font-family: monospace; font-size: var(--text-sm);">
+                            <h4 style="font-family: var(--font-body);">Token Hierarchy:</h4>
+                            <pre style="margin-top: var(--space-md); line-height: 1.8; color: var(--color-text-medium);">
+Raw Values (hex codes, pixel values, font families)
+    ↓
+Primitive Tokens (color-blue-500, spacing-md, font-sans)
+    ↓
+Semantic Tokens (color-primary, spacing-section, font-body)
+    ↓
+Component Tokens (button-background-primary, card-padding)</pre>
+                        </div>
+
+                        <div class="case-study-image-placeholder">
+                            [Placeholder image: Visual diagram showing the token hierarchy with actual examples from your system. Show how a raw value (e.g., #0066FF) becomes a primitive (color-blue-500), then semantic (color-primary), then component (button-background-primary). Use color-coding or arrows to show the flow.]
+                        </div>
+
+                        <p class="reframe-text">
+                            We started with <strong>cards</strong> as our first complex component—they contained buttons, text, surfaces, borders, and shadows, so building cards forced us to nail the foundational tokens.
+                        </p>
+
+                        <div class="case-study-image-placeholder">
+                            [Placeholder image: Card component breakdown showing how foundational tokens compose into the complex component. Annotate the card with lines pointing to each element showing which tokens it uses (e.g., "button-background-primary", "card-padding", "shadow-elevation-2", etc.).]
+                        </div>
+
+                        <p class="reframe-text">
+                            <strong>Prioritization:</strong> We focused on most-used tokens based on the audit and upcoming sprint tickets.
+                        </p>
+                    </div>
+
+                    <!-- Phase 3: The Innovation -->
+                    <div class="proposal-item">
+                        <div class="proposal-number">3</div>
+                        <h3 class="proposal-title">Phase 3: The Innovation (Months 6-12)</h3>
+                        <p class="reframe-text">
+                            Here's where we made a leap that would later convince Ionos leadership to adopt our system company-wide:
+                        </p>
+
+                        <h4 style="font-size: var(--text-xl); margin-top: var(--space-lg); margin-bottom: var(--space-md); color: var(--color-primary);">
+                            Figma Variable MODES for Multi-Platform Serving
+                        </h4>
+
+                        <p class="reframe-text">
+                            Figma designed Modes for light/dark theme switching. But we realized: <strong>What if each Mode represented a different platform or brand?</strong>
+                        </p>
+
+                        <p class="reframe-text">This meant:</p>
+                        <ul class="proposal-reasons" style="margin-top: var(--space-md);">
+                            <li>A single button component could be built <strong>once</strong></li>
+                            <li>Web portal engineers got the web portal version</li>
+                            <li>Control panel engineers got the control panel version</li>
+                            <li>HiDrive engineers got the HiDrive version</li>
+                            <li><strong>No duplicate components needed</strong></li>
+                        </ul>
+
+                        <p class="reframe-text" style="margin-top: var(--space-lg);">
+                            Instead of 5 versions of every component (one per platform), we had <strong>1 component with 5 modes</strong>.
+                        </p>
+
+                        <div class="case-study-image-placeholder">
+                            [Placeholder image: Side-by-side comparison showing the SAME button component in different Variable Modes. Show 3-4 variations (e.g., Web Portal style, Control Panel style, HiDrive style, Servers style) demonstrating how one component serves multiple platforms. Include the Figma Variables panel showing the Mode selector if possible.]
+                        </div>
+
+                        <div class="insight-box" style="margin-top: var(--space-lg); background: var(--color-primary); color: white;">
+                            <h4 style="color: white;">This was the game-changer</h4>
+                            <p style="color: rgba(255, 255, 255, 0.95);">
+                                Different brand stylings could be reduced to Variable Modes—<strong>no separate systems needed</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phase 4: Adoption & Validation -->
+                    <div class="proposal-item">
+                        <div class="proposal-number">4</div>
+                        <h3 class="proposal-title">Phase 4: Adoption & Validation (Months 10-14)</h3>
+                        <p class="reframe-text">
+                            We measured success through <strong>sprint velocity</strong>: design-dependent tickets finally matched their effort estimates instead of spilling over.
+                        </p>
+
+                        <h4 style="font-size: var(--text-xl); margin-top: var(--space-xl); margin-bottom: var(--space-md);">
+                            Cultural Shift
+                        </h4>
+
+                        <p class="reframe-text">
+                            The design system project catalyzed broader changes in how designers and engineers collaborated:
+                        </p>
+
+                        <div class="proposal-reasons" style="margin-top: var(--space-lg);">
+                            <h4>Designer Behavior Changes:</h4>
+                            <ul>
+                                <li>Showed WIP designs to engineers <strong>before</strong> end of sprint (not after designs were "perfect")</li>
+                                <li>Spent one day per week sitting with their engineering counterparts</li>
+                                <li>Broke the habit of "hiding" until designs were polished</li>
+                            </ul>
+                        </div>
+
+                        <div class="proposal-reasons" style="margin-top: var(--space-lg);">
+                            <h4>Engineer Empowerment:</h4>
+                            <p>
+                                Engineers learned to use Figma as a tool, not a burden. When Figma released <strong>Dev Mode</strong> partway through our project, David and Chris created a cheat sheet showing engineers how to find the most relevant specs they needed. This accelerated the handoff process significantly—engineers could surface design specs much faster.
+                            </p>
+                        </div>
+
+                        <div class="case-study-image-placeholder">
+                            [Placeholder image: Screenshot showing Figma Dev Mode with the engineer cheat sheet visible, or a before/after showing how engineers previously struggled to find measurements vs. how Dev Mode made it easy. Alternatively, show the actual cheat sheet David and Chris created.]
+                        </div>
+
+                        <div class="proposal-reasons" style="margin-top: var(--space-lg);">
+                            <h4>Cross-Product Stream Collaboration:</h4>
+                            <p>
+                                Engineers from different product streams started talking to each other (some for the first time), kickstarting conversations about consolidating differing processes and tech stacks.
+                            </p>
+                        </div>
+
+                        <div class="insight-box" style="margin-top: var(--space-lg);">
+                            <h4>Bi-weekly CoP Meetings</h4>
+                            <p>
+                                Designers, engineers (6 teams), and POs (5 total) met every two weeks for design system discussions. My boss (Head of UX) and her boss (VP of Customer Platforms, Guido Bartz) were informed, not consulted—we operated as a <strong>strategic internal product</strong> with ongoing iteration, not a finite project.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: The Impact -->
+        <section class="case-study-section results-section">
+            <div class="container">
+                <h2 class="section-heading">The Impact</h2>
+
+                <h3 class="proposal-title" style="color: white; margin-bottom: var(--space-xl);">Quantifiable Results</h3>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>40% Reduction in Duplicate Components</h4>
+                            <p>The leaner, cleaner component library eliminated wasted effort.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Sprint Velocity Restored</h4>
+                            <p>Design-dependent tickets stopped spilling over sprints. Time estimates finally matched reality.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Time Saved per Designer/Engineer</h4>
+                            <p>Fewer design-to-dev handoff issues meant less back-and-forth, less rework.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item success">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Unexpected Bonus: Marketing Agility</h4>
+                            <p>Marketing campaign development time decreased significantly. Applying campaign-specific styling became a matter of creating a new Variable Mode instead of manual design work for each campaign asset.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-image-placeholder" style="margin-top: var(--space-xxl); border-color: rgba(255, 255, 255, 0.3);">
+                    [Placeholder image: Graph or chart showing sprint completion rates before/after, OR bar chart showing component count reduction (e.g., "200 components → 120 components = 40% reduction"), OR before/after comparison of sprint burndown charts showing improved velocity.]
+                </div>
+
+                <h3 class="proposal-title" style="color: white; margin-top: calc(var(--space-xxl) * 1.5); margin-bottom: var(--space-xl);">
+                    The Ultimate Validation: Company-Wide Adoption
+                </h3>
+
+                <p style="color: rgba(255, 255, 255, 0.95); font-size: var(--text-lg); line-height: var(--leading-snug); margin-bottom: var(--space-lg);">
+                    In August 2024, Ionos Group (STRATO's parent company) underwent a restructuring focused on efficiency. Leadership was looking to consolidate redundant systems across 10 brands.
+                </p>
+
+                <p style="color: rgba(255, 255, 255, 0.95); font-size: var(--text-lg); line-height: var(--leading-snug); margin-bottom: var(--space-xl);">
+                    <strong style="color: white;">Our VP of Customer Platforms, Guido Bartz, pitched our design system to the Ionos board.</strong>
+                </p>
+
+                <div class="insight-box" style="background: rgba(255, 255, 255, 0.1); border-color: white;">
+                    <h4 style="color: white;">Why We Won:</h4>
+                    <div style="color: rgba(255, 255, 255, 0.95); line-height: var(--leading-snug);">
+                        <p style="margin-bottom: var(--space-md);"><strong style="color: white;">Multi-Brand Capability</strong><br>
+                        Different brand stylings could be reduced to Variable Modes—no separate systems needed. This was unique among the 10 brands' approaches.</p>
+
+                        <p style="margin-bottom: var(--space-md);"><strong style="color: white;">Agile Approach</strong><br>
+                        Our modular, adaptable system could be <strong>used before it was "finished"</strong>—unlike some brands' slow, waterfall approaches that produced obsolete components by the time they were done.</p>
+
+                        <p style="margin-bottom: var(--space-md);"><strong style="color: white;">Proven Track Record</strong><br>
+                        Sprint velocity improvements and 40% component reduction demonstrated real business value, not just design theory.</p>
+
+                        <p><strong style="color: white;">Early Adoption Network</strong><br>
+                        Through informal bi-weekly UX knowledge-sharing calls across all 9 brands, curious designers had already adopted our techniques. This grassroots buy-in made full adoption an easy sell—designers weren't being forced to adopt something unfamiliar.</p>
+                    </div>
+                </div>
+
+                <div class="big-stat" style="margin-top: calc(var(--space-xxl) * 1.5);">
+                    <div class="stat-description" style="margin-bottom: var(--space-lg);">
+                        <strong style="font-size: var(--text-2xl); color: white;">Outcome:</strong>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.95); font-size: var(--text-lg); line-height: var(--leading-snug);">
+                        A centralized design system team was formed at Ionos Group. I was offered the role of Design System Lead, with Chris Stüberitz (no longer a junior after his solid work) and two designers from the parent company joining the new team.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Skills Demonstrated -->
+        <section class="case-study-section takeaways-section">
+            <div class="container">
+                <h2 class="section-heading">Skills Demonstrated</h2>
+
+                <h3 class="proposal-title" style="margin-bottom: var(--space-xl);">What This Project Required</h3>
+
+                <div class="takeaways-grid">
+                    <div class="takeaway-item">
+                        <h4>Systems Thinking</h4>
+                        <p>
+                            Seeing the design system not as a collection of components, but as an ecosystem connecting designers, engineers, products, and brands. Understanding how changes in one part ripple through the whole.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <h4>Stakeholder Management</h4>
+                        <p>
+                            Navigating relationships with 6 engineering leads, 5 POs, 6 designers, and leadership—knowing who needed to be consulted vs. informed, and when.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <h4>Technical Knowledge</h4>
+                        <p>
+                            Understanding design tokens, Variable Modes, Figma's REST API, and how different tech stacks (web portal, control panel, iOS, Android) needed different outputs from the same source.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <h4>Facilitation</h4>
+                        <p>
+                            Running workshops that broke down silos, built consensus, and kept momentum. Creating spaces where designers and engineers could collaborate as equals.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <h4>Strategic Product Management</h4>
+                        <p>
+                            Treating the design system as an internal product with a roadmap, priorities, and iterative releases—not a finite deliverable.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <h4>Removing Barriers</h4>
+                        <p>
+                            Negotiating with POs to protect designers' capacity for the project. Planning in phases. Aligning with EAA deadline. Using sprint priorities to guide design system work.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="insight-box" style="margin-top: calc(var(--space-xxl) * 1.5); background: var(--color-primary); color: white; border: none;">
+                    <h4 style="color: white; font-size: var(--text-xl); margin-bottom: var(--space-md);">My Role: Orchestration</h4>
+                    <p style="color: rgba(255, 255, 255, 0.95); margin-bottom: var(--space-md);">
+                        While everyone contributed collectively, my unique contribution was <strong style="color: white;">keeping the machine running</strong>:
+                    </p>
+                    <ul style="color: rgba(255, 255, 255, 0.95); list-style: none; padding-left: 0;">
+                        <li style="padding: var(--space-xs) 0; padding-left: calc(var(--space-md) + 0.5rem); position: relative;">
+                            <span style="position: absolute; left: 0; color: white; font-weight: bold;">✓</span>
+                            <strong style="color: white;">Decided to do it:</strong> Brought the vision and secured initial buy-in
+                        </li>
+                        <li style="padding: var(--space-xs) 0; padding-left: calc(var(--space-md) + 0.5rem); position: relative;">
+                            <span style="position: absolute; left: 0; color: white; font-weight: bold;">✓</span>
+                            <strong style="color: white;">Removed barriers:</strong> Negotiated with POs to leave designers capacity for the project
+                        </li>
+                        <li style="padding: var(--space-xs) 0; padding-left: calc(var(--space-md) + 0.5rem); position: relative;">
+                            <span style="position: absolute; left: 0; color: white; font-weight: bold;">✓</span>
+                            <strong style="color: white;">Planned the build:</strong> Created the phased approach aligned with EAA deadline and sprint realities
+                        </li>
+                        <li style="padding: var(--space-xs) 0; padding-left: calc(var(--space-md) + 0.5rem); position: relative;">
+                            <span style="position: absolute; left: 0; color: white; font-weight: bold;">✓</span>
+                            <strong style="color: white;">Facilitated everything:</strong> Every workshop, every CoP meeting, every cross-team discussion
+                        </li>
+                        <li style="padding: var(--space-xs) 0; padding-left: calc(var(--space-md) + 0.5rem); position: relative;">
+                            <span style="position: absolute; left: 0; color: white; font-weight: bold;">✓</span>
+                            <strong style="color: white;">Kept focus:</strong> When other priorities threatened to derail, I kept the team on track
+                        </li>
+                    </ul>
+                    <blockquote style="margin-top: var(--space-lg); padding-left: var(--space-lg); border-left: 3px solid white; font-style: italic; color: white; font-size: var(--text-lg);">
+                        "I kept the machine running and removed barriers so everyone could focus. My job was to ensure this project didn't become just another deprecated pattern library."
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Reflection -->
+        <section class="case-study-section proposal-section">
+            <div class="container">
+                <h2 class="section-heading">Reflection</h2>
+
+                <h3 class="proposal-title">What Made This Succeed</h3>
+
+                <div class="problem-grid" style="margin-top: var(--space-lg);">
+                    <div class="problem-item">
+                        <div class="problem-item-content">
+                            <h4 class="problem-title">Right Timing</h4>
+                            <p class="problem-description">
+                                Figma Variables released exactly when we needed it. STRATO had just fully migrated to Figma. The EAA deadline created helpful constraints.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item">
+                        <div class="problem-item-content">
+                            <h4 class="problem-title">Cross-Functional from Day One</h4>
+                            <p class="problem-description">
+                                Engineers weren't just consulted—they were co-creators. We designed the system <strong>with</strong> them, not <strong>for</strong> them.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item">
+                        <div class="problem-item-content">
+                            <h4 class="problem-title">Strategic Constraints Helped</h4>
+                            <p class="problem-description">
+                                The EAA deadline focused our priorities. Sprint demands kept us pragmatic.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item">
+                        <div class="problem-item-content">
+                            <h4 class="problem-title">Cultural Shift Mattered</h4>
+                            <p class="problem-description">
+                                Breaking down silos between designers/engineers and between engineering teams created lasting collaboration beyond the design system itself.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item">
+                        <div class="problem-item-content">
+                            <h4 class="problem-title">Internal Product Mindset</h4>
+                            <p class="problem-description">
+                                Treated design system as ongoing optimization, not finite project. This made it sustainable.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item">
+                        <div class="problem-item-content">
+                            <h4 class="problem-title">Business Value Front and Center</h4>
+                            <p class="problem-description">
+                                Focused on sprint velocity and efficiency, not just design craft. This earned leadership buy-in.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item">
+                        <div class="problem-item-content">
+                            <h4 class="problem-title">Starting Small</h4>
+                            <p class="problem-description">
+                                I didn't need everyone on board—just one point of contact per engineering team. Skeptics came around when they saw progress at monthly demos. <strong>I would have moved faster if I'd understood this from the start.</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-box" style="margin-top: calc(var(--space-xxl) * 1.5); background: var(--color-background-alt); border-left: 4px solid var(--color-primary);">
+                    <h3 style="font-size: var(--text-2xl); margin-bottom: var(--space-lg);">What I'd Do Differently</h3>
+
+                    <h4 style="font-size: var(--text-xl); margin-bottom: var(--space-md); color: var(--color-primary);">
+                        Move Faster with Less Upfront Buy-In
+                    </h4>
+
+                    <p style="color: var(--color-text-medium); line-height: var(--leading-snug); margin-bottom: var(--space-md);">
+                        I spent too much time early on trying to get buy-in from too many stakeholders. Buy-in came easier <strong>after the project started</strong> and there was something concrete to show (rather than theoretical).
+                    </p>
+
+                    <p style="color: var(--color-text-medium); line-height: var(--leading-snug); margin-bottom: var(--space-md);">
+                        The minimum number of key stakeholders I needed was actually much lower than I thought: <strong>one engineer per product stream</strong>. If other engineers and POs were skeptical, having one representative per tech stack willing to give a couple hours per week was enough.
+                    </p>
+
+                    <p style="color: var(--color-text-medium); line-height: var(--leading-snug); margin-bottom: var(--space-md);">
+                        With that support, the design system gained credibility each month at department status updates. Skeptics turned into allies as they saw tangible progress.
+                    </p>
+
+                    <p style="color: var(--color-text-dark); line-height: var(--leading-snug); font-weight: var(--font-semibold); margin-top: var(--space-lg);">
+                        Lesson: Sometimes you have to start building before everyone believes in the vision.
+                    </p>
+                </div>
+
+                <div class="insight-box" style="margin-top: var(--space-xl); background: var(--color-background); border: 2px solid var(--color-border);">
+                    <h3 style="font-size: var(--text-2xl); margin-bottom: var(--space-md);">Why I Left</h3>
+
+                    <p style="color: var(--color-text-medium); line-height: var(--leading-snug); margin-bottom: var(--space-md);">
+                        When offered the Design System Lead role at Ionos in August 2024, I chose to pursue a new challenge at Smart Agency (building AI-assisted products). I'd achieved what I set out to do—prove the system's value and see it adopted company-wide.
+                    </p>
+
+                    <p style="color: var(--color-text-medium); line-height: var(--leading-snug);">
+                        I wanted to <strong>build something new from scratch</strong> rather than maintain and scale what we'd built. That's where I thrive: in the 0→1 phase, bringing order to chaos and establishing foundations for others to build on.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing Statement -->
+        <section class="case-study-section challenge-section">
+            <div class="container">
+                <div class="challenge-content">
+                    <p class="lead-text" style="text-align: center; max-width: 900px; margin: 0 auto var(--space-lg);">
+                        This project taught me that the hardest part of design systems isn't the technical implementation—it's the cultural transformation.
+                    </p>
+                    <p class="reframe-text" style="text-align: center; max-width: 900px; margin: 0 auto;">
+                        You're not just building components; you're changing how teams work, communicate, and trust each other.
+                    </p>
+                    <p class="reframe-text" style="text-align: center; max-width: 900px; margin: var(--space-xl) auto 0;">
+                        What started as a solution to design inefficiency became a model for how an entire company could collaborate across brands and platforms. And it proved that with the right timing, the right team, and relentless focus on business value, design systems can scale beyond anyone's initial vision.
                     </p>
                 </div>
             </div>
@@ -92,6 +693,101 @@
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
+            });
+        });
+
+        // Lightbox functionality for images
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.case-study-image img');
+
+            // Create lightbox element
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            lightbox.innerHTML = `
+                <div class="lightbox-close"></div>
+                <div class="lightbox-content">
+                    <div class="lightbox-image-container">
+                        <img class="lightbox-image" src="" alt="">
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(lightbox);
+
+            const lightboxImg = lightbox.querySelector('.lightbox-image');
+            const lightboxContainer = lightbox.querySelector('.lightbox-image-container');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+
+            // Open lightbox on image click
+            images.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close lightbox
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                lightboxContainer.classList.remove('zoomed');
+                document.body.style.overflow = '';
+            };
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target === lightboxContainer) {
+                    closeLightbox();
+                }
+            });
+
+            // Zoom functionality
+            lightboxImg.addEventListener('click', (e) => {
+                e.stopPropagation();
+                lightboxContainer.classList.toggle('zoomed');
+            });
+
+            // Drag functionality when zoomed
+            let isDragging = false;
+            let startX, startY, scrollLeft, scrollTop;
+
+            lightboxContainer.addEventListener('mousedown', (e) => {
+                if (!lightboxContainer.classList.contains('zoomed')) return;
+                isDragging = true;
+                lightboxContainer.classList.add('dragging');
+                startX = e.pageX - lightboxContainer.offsetLeft;
+                startY = e.pageY - lightboxContainer.offsetTop;
+                scrollLeft = lightboxContainer.scrollLeft;
+                scrollTop = lightboxContainer.scrollTop;
+            });
+
+            lightboxContainer.addEventListener('mouseleave', () => {
+                isDragging = false;
+                lightboxContainer.classList.remove('dragging');
+            });
+
+            lightboxContainer.addEventListener('mouseup', () => {
+                isDragging = false;
+                lightboxContainer.classList.remove('dragging');
+            });
+
+            lightboxContainer.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - lightboxContainer.offsetLeft;
+                const y = e.pageY - lightboxContainer.offsetTop;
+                const walkX = (x - startX) * 2;
+                const walkY = (y - startY) * 2;
+                lightboxContainer.scrollLeft = scrollLeft - walkX;
+                lightboxContainer.scrollTop = scrollTop - walkY;
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.classList.contains('active') && e.key === 'Escape') {
+                    closeLightbox();
+                }
             });
         });
     </script>
