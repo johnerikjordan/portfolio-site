@@ -239,9 +239,10 @@
                             Following atomic design principles and <a href="https://www.uxpin.com/studio/blog/design-system-naming-conventions/" target="_blank" rel="noopener">naming convention best practices</a>, we built our token architecture:
                         </p>
 
-                        <div class="insight-box" style="margin-top: var(--space-lg); font-family: monospace; font-size: var(--text-sm);">
-                            <h4 style="font-family: var(--font-body);">Token Hierarchy:</h4>
-                            <pre style="margin-top: var(--space-md); line-height: 1.8; color: var(--color-text-medium);">
+                        <div style="display: flex; gap: 2%; margin-top: var(--space-lg); align-items: flex-start;">
+                            <div class="insight-box" style="flex: 0 0 48%; margin-top: 0; font-family: monospace; font-size: var(--text-sm);">
+                                <h4 style="font-family: var(--font-body);">Token Hierarchy:</h4>
+                                <pre style="margin-top: var(--space-md); line-height: 1.8; color: var(--color-text-medium);">
 Raw Values (hex codes, pixel values, font families)
     ↓
 Primitive Tokens (color-blue-500, spacing-md, font-sans)
@@ -249,11 +250,12 @@ Primitive Tokens (color-blue-500, spacing-md, font-sans)
 Semantic Tokens (color-primary, spacing-section, font-body)
     ↓
 Component Tokens (button-background-primary, card-padding)</pre>
-                        </div>
+                            </div>
 
-                        <div class="case-study-image" style="max-width: 50%; margin-left: auto; margin-right: auto;">
-                            <img src="images/design-system-token-hierarchy.jpg" alt="Design token hierarchy flowchart showing progression from raw hex value #272CB2 to primitive token ozone-blue-1000, to semantic token primary, to component token btn-primary-bg, ending in a styled button">
-                            <p class="image-caption">Token hierarchy in action: how a single color value flows from raw → primitive → semantic → component → final UI</p>
+                            <div class="case-study-image" style="flex: 0 0 48%; margin: 0;">
+                                <img src="images/design-system-token-hierarchy.jpg" alt="Design token hierarchy flowchart showing progression from raw hex value #272CB2 to primitive token ozone-blue-1000, to semantic token primary, to component token btn-primary-bg, ending in a styled button">
+                                <p class="image-caption">Token hierarchy in action: how a single color value flows from raw → primitive → semantic → component → final UI</p>
+                            </div>
                         </div>
 
                         <p class="reframe-text">
