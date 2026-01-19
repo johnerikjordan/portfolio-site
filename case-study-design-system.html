@@ -67,10 +67,6 @@
                         <p><strong>Ionos Group standard</strong><br>across 10 brands</p>
                     </div>
                 </div>
-
-                <div class="case-study-image-placeholder" style="margin-top: var(--space-xl);">
-                    [Placeholder image: Split-screen or before/after comparison. LEFT: Scattered chaos showing multiple deprecated Figma files, inconsistent components, siloed work. RIGHT: Unified system showing single source of truth serving multiple platforms with Variable Modes. Should immediately communicate "chaos to order" transformation.]
-                </div>
             </div>
         </section>
 
@@ -125,10 +121,6 @@
                     </div>
                 </div>
 
-                <div class="case-study-image-placeholder">
-                    [Placeholder image: Screenshot montage showing the chaotic starting state - multiple deprecated pattern libraries, inconsistent versions of the same component scattered across files, abandoned Figma projects. Consider annotating with arrows or highlights pointing to specific problems.]
-                </div>
-
                 <h3 class="proposal-title" style="margin-top: var(--space-xl);">Why Previous Attempts Failed</h3>
                 <p class="reframe-text">
                     My predecessors had tried to solve this with documentation—style guides, pattern libraries, usage instructions. But manual documentation fell out of date immediately. What we needed wasn't more documentation; we needed a system that <strong>enforced consistency automatically</strong> and <strong>adapted to different technical requirements without manual intervention.</strong>
@@ -173,8 +165,9 @@
                             Two weeks after starting, I facilitated an all-day workshop bringing together designers, engineers, and product owners across all product streams. <strong>Most people in that room had never met before</strong>—that's how siloed we were.
                         </p>
 
-                        <div class="case-study-image-placeholder">
-                            [Placeholder image: Either a workshop photo showing the cross-functional team collaborating at whiteboards, OR a diagram showing the stakeholder map - 6 designers, 6 engineering leads (web portal, control panel, servers control panel, cloud storage web/iOS/Android), 5 POs, connected by lines showing previously broken connections now being formed.]
+                        <div class="case-study-image">
+                            <img src="images/design-system-workshop-whiteboard-modes.jpg" alt="Workshop whiteboard showing token hierarchy planning with HEX VALUE, PRIMITIVE, SEMANTIC, and MODE columns, demonstrating early collaborative design system thinking">
+                            <p class="image-caption">Early workshop whiteboard showing the token hierarchy concept and introduction of Variable Modes</p>
                         </div>
 
                         <div class="proposal-reasons">
@@ -203,8 +196,9 @@
                             All six designers conducted an audit of components in their respective platform areas. We created our first unified Figma file containing <strong>all versions of all components from every STRATO platform</strong>.
                         </p>
 
-                        <div class="case-study-image-placeholder">
-                            [Placeholder image: Before/after of component audit. BEFORE: Chaotic inventory showing duplicate buttons, cards, inputs with slight variations and no organization. AFTER: Organized, categorized component inventory with clear grouping and version control.]
+                        <div class="case-study-image">
+                            <img src="images/design-system-pricecard-components.jpg" alt="Price card component variations showing complex nested components with pricing, features, and call-to-action buttons in a carousel layout">
+                            <p class="image-caption">Price card components - example of the complex nested components we needed to systematize. These appeared on every product page in comparison carousels.</p>
                         </div>
 
                         <p class="reframe-text">
@@ -216,6 +210,11 @@
                             <p>
                                 Parallel to this project, we were preparing for the European Accessibility Act (June 2026 deadline). This hard deadline actually <strong>focused our priorities</strong>: we tackled typography, type scales, and colors first, since getting brand color changes approved—even for accessibility—had a long approval timeline.
                             </p>
+                        </div>
+
+                        <div class="case-study-image">
+                            <img src="images/design-system-accessibility-contrast.jpg" alt="Contrast ratio testing showing 4.82:1 ratios for normal text, large text, and graphics against background color #0077BB">
+                            <p class="image-caption">Accessibility testing: ensuring color contrast ratios met EAA requirements (4.82:1 for all text sizes)</p>
                         </div>
 
                         <div class="insight-box" style="margin-top: var(--space-lg);">
@@ -252,17 +251,14 @@ Semantic Tokens (color-primary, spacing-section, font-body)
 Component Tokens (button-background-primary, card-padding)</pre>
                         </div>
 
-                        <div class="case-study-image-placeholder">
-                            [Placeholder image: Visual diagram showing the token hierarchy with actual examples from your system. Show how a raw value (e.g., #0066FF) becomes a primitive (color-blue-500), then semantic (color-primary), then component (button-background-primary). Use color-coding or arrows to show the flow.]
+                        <div class="case-study-image">
+                            <img src="images/design-system-token-hierarchy.jpg" alt="Design token hierarchy flowchart showing progression from raw hex value #272CB2 to primitive token ozone-blue-1000, to semantic token primary, to component token btn-primary-bg, ending in a styled button">
+                            <p class="image-caption">Token hierarchy in action: how a single color value flows from raw → primitive → semantic → component → final UI</p>
                         </div>
 
                         <p class="reframe-text">
                             We started with <strong>cards</strong> as our first complex component—they contained buttons, text, surfaces, borders, and shadows, so building cards forced us to nail the foundational tokens.
                         </p>
-
-                        <div class="case-study-image-placeholder">
-                            [Placeholder image: Card component breakdown showing how foundational tokens compose into the complex component. Annotate the card with lines pointing to each element showing which tokens it uses (e.g., "button-background-primary", "card-padding", "shadow-elevation-2", etc.).]
-                        </div>
 
                         <p class="reframe-text">
                             <strong>Prioritization:</strong> We focused on most-used tokens based on the audit and upcoming sprint tickets.
@@ -298,8 +294,9 @@ Component Tokens (button-background-primary, card-padding)</pre>
                             Instead of 5 versions of every component (one per platform), we had <strong>1 component with 5 modes</strong>.
                         </p>
 
-                        <div class="case-study-image-placeholder">
-                            [Placeholder image: Side-by-side comparison showing the SAME button component in different Variable Modes. Show 3-4 variations (e.g., Web Portal style, Control Panel style, HiDrive style, Servers style) demonstrating how one component serves multiple platforms. Include the Figma Variables panel showing the Mode selector if possible.]
+                        <div class="case-study-image">
+                            <img src="images/design-system-modes-comparison.jpg" alt="Four-panel comparison showing the same button components in Classic Light, Classic Dark, Campaign Light, and Campaign Dark modes, demonstrating all button states including primary, hover, active, disabled, and focus">
+                            <p class="image-caption">The innovation: One button component serving four different Variable Modes (Classic Light/Dark, Campaign Light/Dark) with all interaction states</p>
                         </div>
 
                         <div class="insight-box" style="margin-top: var(--space-lg); background: var(--color-primary); color: white;">
@@ -307,6 +304,11 @@ Component Tokens (button-background-primary, card-padding)</pre>
                             <p style="color: rgba(255, 255, 255, 0.95);">
                                 Different brand stylings could be reduced to Variable Modes—<strong>no separate systems needed</strong>.
                             </p>
+                        </div>
+
+                        <div class="case-study-image">
+                            <img src="images/design-system-figma-variables-color.jpg" alt="Figma Variables panel showing Color collections with six modes: wwy, wwy-dark, classic, classic-dark, IONOS light mode, and IONOS dark mode, displaying brand colors and surface tokens">
+                            <p class="image-caption">Behind the scenes: Figma Variables panel showing six brand/theme modes (wwy, classic, IONOS × light/dark) managing all color tokens from a single source</p>
                         </div>
                     </div>
 
@@ -342,8 +344,9 @@ Component Tokens (button-background-primary, card-padding)</pre>
                             </p>
                         </div>
 
-                        <div class="case-study-image-placeholder">
-                            [Placeholder image: Screenshot showing Figma Dev Mode with the engineer cheat sheet visible, or a before/after showing how engineers previously struggled to find measurements vs. how Dev Mode made it easy. Alternatively, show the actual cheat sheet David and Chris created.]
+                        <div class="case-study-image">
+                            <img src="images/design-system-dev-mode.jpg" alt="Figma Dev Mode showing a price card component with CSS code using design tokens like var(--Dimension-Ionos-spacer-400) and the Modes panel displaying Font: classic, Color: classic, and SEMANTIC: classic-light">
+                            <p class="image-caption">Figma Dev Mode in action: Engineers could inspect components and see token references directly in the code panel, with Variable Modes visible at bottom right</p>
                         </div>
 
                         <div class="proposal-reasons" style="margin-top: var(--space-lg);">
@@ -403,10 +406,6 @@ Component Tokens (button-background-primary, card-padding)</pre>
                             <p>Marketing campaign development time decreased significantly. Applying campaign-specific styling became a matter of creating a new Variable Mode instead of manual design work for each campaign asset.</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="case-study-image-placeholder" style="margin-top: var(--space-xxl); border-color: rgba(255, 255, 255, 0.3);">
-                    [Placeholder image: Graph or chart showing sprint completion rates before/after, OR bar chart showing component count reduction (e.g., "200 components → 120 components = 40% reduction"), OR before/after comparison of sprint burndown charts showing improved velocity.]
                 </div>
 
                 <h3 class="proposal-title" style="color: white; margin-top: calc(var(--space-xxl) * 1.5); margin-bottom: var(--space-xl);">
