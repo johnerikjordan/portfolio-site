@@ -155,27 +155,39 @@ section {
    RED THREAD SVG
    ============================================ */
 .red-thread {
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: -50px;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 400px;
     pointer-events: none;
-    z-index: -1;
-    opacity: 0.3;
-    transform: translateY(150px);
+    z-index: 2;
 }
 
-.red-thread path {
-    animation: threadFlow 20s ease-in-out infinite;
+.red-thread .thread-stroke {
+    opacity: 0.7;
+    animation: threadFlowStroke 20s ease-in-out infinite;
 }
 
-@keyframes threadFlow {
+.red-thread .thread-fill {
+    animation: threadFlowFill 20s ease-in-out infinite;
+}
+
+@keyframes threadFlowStroke {
     0%, 100% {
         d: path("M-50,100 C200,50 300,80 400,100 S600,110 800,120 C900,125 1000,140 1200,100 S1400,130 1600,150");
     }
     50% {
         d: path("M-50,120 C200,80 300,100 400,110 S600,95 800,100 C900,105 1000,120 1200,140 S1400,120 1600,130");
+    }
+}
+
+@keyframes threadFlowFill {
+    0%, 100% {
+        d: path("M-50,100 C200,50 300,80 400,100 S600,110 800,120 C900,125 1000,140 1200,100 S1400,130 1600,150 L1600,0 L-50,0 Z");
+    }
+    50% {
+        d: path("M-50,120 C200,80 300,100 400,110 S600,95 800,100 C900,105 1000,120 1200,140 S1400,120 1600,130 L1600,0 L-50,0 Z");
     }
 }
 
@@ -273,6 +285,25 @@ section {
     padding-bottom: var(--space-xl);
 }
 
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.hero-text {
+    flex: 1;
+}
+
 .hero-title {
     max-width: 900px;
     margin-bottom: var(--space-md);
@@ -290,7 +321,7 @@ section {
     line-height: var(--leading-snug);
     color: var(--color-text-medium);
     max-width: 800px;
-    margin-bottom: var(--space-md);
+    margin-bottom: 0;
 }
 
 .accent-text {
@@ -307,13 +338,63 @@ section {
     max-width: 800px;
 }
 
+/* Hero Sprite */
+.hero-sprite {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.sprite-image {
+    width: 90px;
+    height: auto;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    animation: spriteIdle 2.5s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+    .sprite-image {
+        width: 110px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sprite-image {
+        width: 130px;
+    }
+}
+
+/* 16-bit style idle animation */
+@keyframes spriteIdle {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    25% {
+        transform: translateY(-3px) scale(1.005);
+    }
+    50% {
+        transform: translateY(0) scale(1.01);
+    }
+    75% {
+        transform: translateY(-2px) scale(1.005);
+    }
+}
+
 /* ============================================
    RED THREAD STATEMENT
    ============================================ */
 .red-thread-statement {
+    position: relative;
+    overflow: visible;
     background: var(--color-background-alt);
     padding: var(--space-xxl) 0;
     text-align: right;
+}
+
+.red-thread-statement .container {
+    position: relative;
+    z-index: 1;
 }
 
 .statement-text {
@@ -770,6 +851,10 @@ section {
         padding-top: var(--space-lg);
     }
 
+    .hero-content {
+        text-align: center;
+    }
+
     .hero-title,
     .hero-description,
     .hero-specialty {
@@ -778,6 +863,10 @@ section {
 
     .hero-title {
         font-size: var(--text-2xl);
+    }
+
+    .sprite-image {
+        width: 75px;
     }
 
     .nav-links {
@@ -795,14 +884,15 @@ section {
 @media print {
     .site-header,
     .site-footer,
-    .red-thread {
+    .red-thread,
+    .hero-sprite {
         display: none;
     }
-    
+
     body {
         font-size: 12pt;
     }
-    
+
     section {
         page-break-inside: avoid;
     }
