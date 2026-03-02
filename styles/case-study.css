@@ -82,6 +82,39 @@
     background-image: url('../images/design-system-hero.jpg');
 }
 
+.case-study-hero--design-annotator {
+    background-image: url('../images/annotator-hero.png');
+    background-position: right top;
+    background-size: cover;
+}
+
+.case-study-hero--design-annotator::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(59, 130, 246, 0.15);
+    z-index: 0;
+}
+
+.case-study-hero--design-annotator::before {
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 45%, rgba(255,255,255,0.05) 80%, rgba(255,255,255,0) 100%);
+}
+
+.hero-live-link {
+    color: var(--color-primary);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition-base);
+}
+
+.hero-live-link:hover {
+    border-bottom-color: var(--color-primary);
+}
+
 .hero-meta {
     display: flex;
     align-items: center;

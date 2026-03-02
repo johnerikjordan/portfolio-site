@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Annotator Case Study - John-Erik Jordan</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/case-study.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="case-study-page">
+
+    <header class="site-header">
+        <nav class="main-nav">
+            <a href="index.html" class="logo">JOHN-ERIK JORDAN</a>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html#work">← Back to Work</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="case-study-hero case-study-hero--design-annotator">
+            <div class="container">
+                <div class="hero-meta">
+                    <span class="client-name">Freelance Project</span>
+                    <span class="divider">•</span>
+                    <span class="timeframe">February 2026 · 3 afternoons</span>
+                    <span class="divider">•</span>
+                    <a href="https://design-annotator.netlify.app/" target="_blank" rel="noopener noreferrer" class="hero-live-link">View live tool ↗</a>
+                </div>
+                <h1 class="hero-title">A bespoke staging feedback tool, built in three afternoons.</h1>
+                <div class="hero-role">
+                    <strong>My role:</strong> Solo — Product Designer, Architect, Developer
+                </div>
+            </div>
+        </section>
+
+        <!-- Context -->
+        <section class="case-study-section context-section">
+            <div class="container">
+                <div class="context-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+                <p class="intro-text">
+                    Once a design leaves Figma, feedback collection falls apart — email threads, Slack messages, CMS comments, screenshots in documents. I built Design Annotator to fix that.
+                </p>
+                <div class="context-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Challenge -->
+        <section class="case-study-section takeaways-section">
+            <div class="container">
+                <h2 class="section-heading">The Challenge</h2>
+
+                <div class="takeaways-grid">
+                    <div class="takeaway-item">
+                        <div class="problem-number">1</div>
+                        <h3 class="problem-title">The Feedback Black Hole</h3>
+                        <p class="problem-description">
+                            The moment a design leaves Figma, the tidy commenting workflow disappears. What replaces it is five things at once: email threads that lose context, Slack messages that get buried, meeting notes disconnected from specific elements, CMS comment fields nobody checks, and bug reports nobody reads until the next sprint. Feedback arrives fragmented, or not at all.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <div class="problem-number">2</div>
+                        <h3 class="problem-title">The Paid Tool Problem</h3>
+                        <p class="problem-description">
+                            Tools like Marker.io, Pastel, and BugHerd exist for this — they just cost $50–100/month and require every stakeholder to create an account before leaving a single note. For a solo practitioner or small agency, that's the wrong trade-off. Onboarding friction is not a great first impression.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <div class="problem-number">3</div>
+                        <h3 class="problem-title">The Specific Trigger</h3>
+                        <p class="problem-description">
+                            A new client website project made the problem concrete. I needed non-technical stakeholders to leave element-specific feedback on a staging site — no accounts, no onboarding, no feedback disappearing into email. No existing tool fit those constraints at a sensible price.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Approach -->
+        <section class="case-study-section proposal-section">
+            <div class="container">
+                <h2 class="section-heading">My Approach</h2>
+
+                <div class="proposal-intro">
+                    <p class="lead-text">
+                        I treated this as a design problem before opening a code editor. That decision is what made three afternoons sufficient.
+                    </p>
+                </div>
+
+                <div class="proposal-grid">
+                    <div class="proposal-item">
+                        <div class="proposal-number">1</div>
+                        <h3 class="proposal-title">Phase 1: Speccing Before Building (Afternoon 1)</h3>
+                        <div class="proposal-reasons">
+                            <p>
+                                I used Claude to interrogate every design and architecture decision before writing a line of code.
+                            </p>
+                            <p><strong>Key decisions made during the spec phase:</strong></p>
+                            <ul>
+                                <li><strong>Architecture:</strong> A JavaScript snippet injected into any site's <code>&lt;head&gt;</code> — not an iframe wrapper, not a browser extension. Maximally portable and invisible to the site's own codebase.</li>
+                                <li><strong>Backend:</strong> Supabase (free tier) for comment persistence and real-time sync. Chosen over GitHub-as-database (fragile, race conditions) and Netlify Functions (no native persistence).</li>
+                                <li><strong>Auth model:</strong> Shared site password for all clients (no accounts, no onboarding), separate admin password for resolve/archive actions. Both stored in localStorage after first entry.</li>
+                                <li><strong>Comment states:</strong> Three states — Live, Resolved, Archived — rather than the binary open/closed most tools use. Preserves a full audit trail while keeping the active view clean.</li>
+                                <li><strong>DOM anchoring:</strong> Comments anchor to CSS selector paths, not pixel coordinates, so pins remain accurate when the browser is resized or the viewport changes.</li>
+                                <li><strong>Scope boundary:</strong> A six-step prototype milestone defined explicitly, so the build session had a clear stopping point and wouldn't sprawl.</li>
+                            </ul>
+                            <p class="reframe-text" style="margin-top: var(--space-md);">
+                                The output was a complete spec — detailed enough that Claude Code could build without hitting a single undecided question.
+                            </p>
+                            <div class="case-study-image" style="max-width: 50%;">
+                                <img src="images/annotator-specs-doc.png" alt="The build specification document open in Claude, showing the ordered prototype build steps and definition of done" loading="lazy">
+                                <p class="image-caption">The build spec in Claude — each step ordered so there was always something testable</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="proposal-item">
+                        <div class="proposal-number">2</div>
+                        <h3 class="proposal-title">Phase 2: Database Setup (Afternoon 1, continued)</h3>
+                        <div class="proposal-reasons">
+                            <p>
+                                Before opening Claude Code, I ran the Supabase schema SQL directly — two tables, RLS policies, real-time enabled, indexes. Claude Code connected to a live database immediately, rather than spending build time on infrastructure.
+                            </p>
+                            <div class="case-study-image" style="max-width: 50%;">
+                                <img src="images/annotator-supabase-sql.png" alt="The Supabase SQL editor with the schema creation query for the comments and replies tables" loading="lazy">
+                                <p class="image-caption">Schema SQL run directly in Supabase before the build session began</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="proposal-item">
+                        <div class="proposal-number">3</div>
+                        <h3 class="proposal-title">Phase 3: Building the Prototype (Afternoon 2)</h3>
+                        <div class="proposal-reasons">
+                            <p>
+                                With the spec and live database ready, Claude Code built in sequence:
+                            </p>
+                            <ul>
+                                <li>Password screen with localStorage persistence</li>
+                                <li>Floating feedback icon, annotation mode toggle</li>
+                                <li>Annotation mode layout — scaled site view, header bar, shelf panel placeholder</li>
+                                <li>Supabase connection, comment insert and read</li>
+                                <li>Single-click comment creation — element highlight, input card, auto-save on first keystroke, live pin</li>
+                                <li>Comment modal — opened by clicking a pin, positioned beside the target element</li>
+                            </ul>
+                            <p class="reframe-text" style="margin-top: var(--space-md);">
+                                <strong>Stopping point:</strong> A visitor could authenticate, enter annotation mode, click any element, leave a comment, and see it persist in real time on any device.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="proposal-item">
+                        <div class="proposal-number">4</div>
+                        <h3 class="proposal-title">Phase 4: Security Review Before Client Deployment (Afternoon 3)</h3>
+                        <div class="proposal-reasons">
+                            <p>
+                                Before applying the tool to a real client site:
+                            </p>
+                            <ul>
+                                <li>Audited the public-facing readme (documentation only — no real credentials)</li>
+                                <li>Added CORS restrictions so <code>annotator.js</code> can only load from known client URLs</li>
+                                <li>Confirmed the anon key's threat model (Supabase RLS is the actual security layer)</li>
+                                <li>Rotated test passwords, set production credentials</li>
+                                <li>Validated the full flow in incognito as a first-time client user</li>
+                            </ul>
+                            <p style="margin-top: var(--space-md);">Testing during this phase also surfaced two bugs, fixed on the spot:</p>
+                            <ul>
+                                <li><strong>Pin clustering:</strong> Multiple comments on the same element produced overlapping pins. Fixed with a numbered cluster pin that expands into a comment list on click.</li>
+                                <li><strong>Cross-page navigation:</strong> Clicking a shelf card for a comment on a different page did nothing. Fixed so the shelf navigates to the correct page and scrolls to the anchored element.</li>
+                            </ul>
+                            <p class="reframe-text" style="margin-top: var(--space-md);">
+                                Treating security review as a named phase — not an afterthought — is what makes it actually happen. The bug fixes were a bonus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution -->
+        <section class="case-study-section turning-point-section">
+            <div class="container">
+                <h2 class="section-heading">The Solution</h2>
+
+                <div class="turning-point-content">
+                    <p class="lead-text">
+                        Design Annotator is a JavaScript snippet — two script tags in a site's <code>&lt;head&gt;</code> — that adds a complete annotation layer to any website without touching the site's codebase.
+                    </p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="case-study-image">
+                    <img src="images/annotator-hero.png" alt="Design Annotator running on a test site in annotation mode, showing the header bar, shelf panel with comment thread open, and a location pin on the pricing section" loading="lazy">
+                    <p class="image-caption">Annotation mode — header bar, shelf panel, threaded comment modal, and DOM-anchored pin, all on top of an unmodified staging site</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="turning-point-content">
+                    <p style="margin-bottom: var(--space-md);"><strong>How it works:</strong></p>
+                    <ul style="margin-bottom: var(--space-lg); padding-left: var(--space-md); line-height: var(--leading-relaxed);">
+                        <li style="margin-bottom: var(--space-sm);">Visitors see a password screen before any site content is visible</li>
+                        <li style="margin-bottom: var(--space-sm);">After authentication, a floating feedback icon sits in the bottom-right corner</li>
+                        <li style="margin-bottom: var(--space-sm);">Clicking the icon activates Annotation Mode: the site scales down, a header bar appears, and a shelf panel opens showing all comments in a chronological activity feed, with location pins over commented elements</li>
+                        <li style="margin-bottom: var(--space-sm);">Clicking any element creates a comment anchored to that DOM element — accurate across viewport sizes and browser resizes</li>
+                        <li style="margin-bottom: var(--space-sm);">Each comment supports threaded replies — the full conversation lives inline, managed from the comment management panel</li>
+                        <li style="margin-bottom: var(--space-sm);">Comments sync in real-time across all open sessions via Supabase</li>
+                        <li style="margin-bottom: var(--space-sm);">Overlapping pins cluster into a numbered group; clicking expands a list of the stacked comments</li>
+                        <li style="margin-bottom: var(--space-sm);">Clicking a shelf card for a comment on a different page navigates there and scrolls to the anchored element</li>
+                        <li style="margin-bottom: var(--space-sm);">Admin mode (separate password) unlocks resolve and archive actions, preserving a full audit trail</li>
+                    </ul>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin: var(--space-xl) 0;">
+                        <div>
+                            <div class="case-study-image" style="margin: 0;">
+                                <img src="images/annotator-password-screen.png" alt="The client-facing password screen with a single password field and an Admin login link underneath" loading="lazy" style="height: 300px; object-fit: cover; object-position: top center;">
+                                <p class="image-caption">Client entry point — one password field, no account required</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="case-study-image" style="margin: 0;">
+                                <img src="images/annotator-comment-shelf.png" alt="The comment shelf panel showing Live, Resolved, and Archived filter tabs, with comments from multiple pages and an Admin badge on one entry" loading="lazy" style="height: 300px; object-fit: cover; object-position: top center;">
+                                <p class="image-caption">Shelf feed — filterable by status, navigable across pages</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="case-study-image" style="margin: 0;">
+                                <img src="images/annotator-comment-thread.png" alt="Comment modal showing a threaded conversation with Steve's original comment, J-E's admin reply, and Danielella typing a reply" loading="lazy" style="height: 300px; object-fit: cover; object-position: top center;">
+                                <p class="image-caption">Threaded replies — the full conversation inline on the element</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="case-study-image" style="margin: 0;">
+                                <img src="images/annotator-pin-clustering.png" alt="A numbered cluster pin showing '2 overlapping comments' with both comments listed in a popup" loading="lazy" style="height: 300px; object-fit: cover; object-position: top center;">
+                                <p class="image-caption">Pin clustering — overlapping comments grouped, not stacked</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 style="font-size: var(--text-xl); margin-bottom: var(--space-md); font-weight: var(--font-semibold);">Key decisions that worked:</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: var(--space-sm) 0; padding-left: calc(var(--space-md) + 0.5rem); position: relative; line-height: var(--leading-snug);">
+                            <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: bold;">→</span>
+                            <strong>Spec before code</strong> — No ambiguous decision points in the build session. Claude Code executed rather than improvised.
+                        </li>
+                        <li style="padding: var(--space-sm) 0; padding-left: calc(var(--space-md) + 0.5rem); position: relative; line-height: var(--leading-snug);">
+                            <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: bold;">→</span>
+                            <strong>DOM anchoring over pixel coordinates</strong> — Pins stay accurate when clients resize their browser or switch devices.
+                        </li>
+                        <li style="padding: var(--space-sm) 0; padding-left: calc(var(--space-md) + 0.5rem); position: relative; line-height: var(--leading-snug);">
+                            <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: bold;">→</span>
+                            <strong>Three-state comment model</strong> — Live → Resolved → Archived preserves a full audit trail without cluttering the active view.
+                        </li>
+                        <li style="padding: var(--space-sm) 0; padding-left: calc(var(--space-md) + 0.5rem); position: relative; line-height: var(--leading-snug);">
+                            <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: bold;">→</span>
+                            <strong>No accounts</strong> — Shared password, no sign-up. Clients open a link, enter a password, and they're in.
+                        </li>
+                        <li style="padding: var(--space-sm) 0; padding-left: calc(var(--space-md) + 0.5rem); position: relative; line-height: var(--leading-snug);">
+                            <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: bold;">→</span>
+                            <strong>Security as a named phase</strong> — Treating the pre-deployment review as a project phase meant it actually happened.
+                        </li>
+                    </ul>
+
+                    <div style="margin-top: var(--space-xl); padding: var(--space-lg); background: var(--color-background-alt); border-left: 4px solid var(--color-primary);">
+                        <p style="margin: 0; font-size: var(--text-lg);">Try the live tool: <a href="https://design-annotator.netlify.app/" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: var(--font-semibold);">design-annotator.netlify.app ↗</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Results -->
+        <section class="case-study-section results-section">
+            <div class="container">
+                <h2 class="section-heading">The Results</h2>
+
+                <div class="results-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>What Was Built</h4>
+                                <p>
+                                    A production-ready staging annotation tool: <strong>password protection</strong>, <strong>real-time sync</strong>, <strong>DOM-anchored pins</strong>, <strong>pin clustering</strong>, <strong>threaded replies</strong>, <strong>a chronological shelf feed</strong>, <strong>cross-page navigation</strong>, three-state comment management, and admin controls — deployed to Netlify and reusable across any client project.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Replacing Paid SaaS</h4>
+                                <p>
+                                    Replaces Marker.io, Pastel, and BugHerd — which charge <strong>$50–100/month</strong> and require stakeholder accounts — with a bespoke tool I own, control, and can extend.
+                                </p>
+                                <p>
+                                    <strong>Ongoing cost: $0</strong> (Netlify + Supabase free tiers).
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item success">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Time to Working Prototype</h4>
+                                <div class="big-stat">
+                                    <p class="stat-description">
+                                        <strong>Three afternoons</strong> from concept to live, tested, production-ready tool — including spec, database setup, build, and security review.
+                                    </p>
+                                </div>
+                                <p style="margin-top: var(--space-md); font-style: italic; opacity: 0.85;">
+                                    This section will be updated after the tool's first full client project cycle.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="case-study-section takeaways-section">
+            <div class="container narrow">
+                <h2 class="section-heading">Next Steps</h2>
+
+                <p class="lead-text" style="margin-bottom: var(--space-lg);">Design Annotator is actively developed. Planned additions:</p>
+
+                <div class="takeaways-grid">
+                    <div class="takeaway-item">
+                        <h4>JIRA Integration</h4>
+                        <p>
+                            Convert any comment — with its DOM selector context — directly into a bug ticket or feature request, pre-populated with element information and a link back to the staging page.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <h4>Slack / Teams Integration</h4>
+                        <p>
+                            Push notifications to a dedicated channel when new comments are added, so the team doesn't need to actively monitor the tool.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <h4>Email Notifications</h4>
+                        <p>
+                            For stakeholders who aren't in Slack — ensuring no comment goes unnoticed regardless of how the team communicates.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Takeaways -->
+        <section class="case-study-section takeaways-section">
+            <div class="container narrow">
+                <h2 class="section-heading">Key Takeaways</h2>
+
+                <div class="takeaways-grid">
+                    <div class="takeaway-item">
+                        <h4>1. Spec work is design work</h4>
+                        <p>
+                            Spending the first afternoon on architecture decisions and a detailed build spec — rather than opening a code editor — is what made three afternoons sufficient.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <h4>2. AI as a thinking partner, not just a code generator</h4>
+                        <p>
+                            The most valuable AI interactions were structured conversations about requirements and edge cases — not the code generation itself. Claude Code is fast. The spec work is what made it accurate.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <h4>3. Owning your tools has compounding value</h4>
+                        <p>
+                            A bespoke tool can be extended in ways a SaaS subscription cannot. JIRA integration, Slack notifications, and client-specific customisation are all on the roadmap.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <h4>4. Security is a design problem</h4>
+                        <p>
+                            The admin password model, what the public readme exposes, CORS restrictions — these are all design decisions. Treating the security review as a named phase is what makes it actually happen.
+                        </p>
+                    </div>
+
+                    <div class="takeaway-item">
+                        <h4>5. Fifteen years of pain is good product research</h4>
+                        <p>
+                            I've encountered the fragmented staging feedback problem across editorial, agency, and product roles for fifteen years. That lived context made the requirements clear before any stakeholder interviews were needed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Project Navigation -->
+        <section class="next-project">
+            <div class="container">
+                <a href="case-study-smart-agency.html" class="next-project-link">
+                    <div class="next-label">Next Project</div>
+                    <h3 class="next-title">Earning Users' Trust at Smart Agency →</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 John-Erik Jordan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Lightbox functionality
+        (function() {
+            const lightboxHTML = `
+                <div class="lightbox" id="lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox"></button>
+                    <div class="lightbox-content">
+                        <div class="lightbox-image-container" id="lightbox-container">
+                            <img class="lightbox-image" id="lightbox-image" src="" alt="">
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxContainer = document.getElementById('lightbox-container');
+            const closeBtn = document.querySelector('.lightbox-close');
+
+            let isDragging = false;
+            let startX, startY, scrollLeft, scrollTop;
+
+            document.querySelectorAll('.case-study-image img').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImage.src = img.src;
+                    lightboxImage.alt = img.alt;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    lightboxContainer.classList.remove('zoomed');
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+                lightboxContainer.classList.remove('zoomed');
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target === lightboxContainer) {
+                    if (!lightboxContainer.classList.contains('zoomed')) {
+                        closeLightbox();
+                    }
+                }
+            });
+
+            lightboxImage.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (lightboxContainer.classList.contains('zoomed')) {
+                    lightboxContainer.classList.remove('zoomed');
+                    lightboxContainer.scrollTo(0, 0);
+                } else {
+                    lightboxContainer.classList.add('zoomed');
+                    setTimeout(() => {
+                        const scrollX = (lightboxContainer.scrollWidth - lightboxContainer.clientWidth) / 2;
+                        const scrollY = (lightboxContainer.scrollHeight - lightboxContainer.clientHeight) / 2;
+                        lightboxContainer.scrollTo(scrollX, scrollY);
+                    }, 50);
+                }
+            });
+
+            lightboxContainer.addEventListener('mousedown', (e) => {
+                if (!lightboxContainer.classList.contains('zoomed')) return;
+                isDragging = true;
+                lightboxContainer.classList.add('dragging');
+                startX = e.pageX - lightboxContainer.offsetLeft;
+                startY = e.pageY - lightboxContainer.offsetTop;
+                scrollLeft = lightboxContainer.scrollLeft;
+                scrollTop = lightboxContainer.scrollTop;
+            });
+
+            lightboxContainer.addEventListener('mouseleave', () => {
+                isDragging = false;
+                lightboxContainer.classList.remove('dragging');
+            });
+
+            lightboxContainer.addEventListener('mouseup', () => {
+                isDragging = false;
+                lightboxContainer.classList.remove('dragging');
+            });
+
+            lightboxContainer.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - lightboxContainer.offsetLeft;
+                const y = e.pageY - lightboxContainer.offsetTop;
+                const walkX = (x - startX) * 1.5;
+                const walkY = (y - startY) * 1.5;
+                lightboxContainer.scrollLeft = scrollLeft - walkX;
+                lightboxContainer.scrollTop = scrollTop - walkY;
+            });
+
+            lightboxContainer.addEventListener('touchstart', (e) => {
+                if (!lightboxContainer.classList.contains('zoomed')) return;
+                isDragging = true;
+                startX = e.touches[0].pageX - lightboxContainer.offsetLeft;
+                startY = e.touches[0].pageY - lightboxContainer.offsetTop;
+                scrollLeft = lightboxContainer.scrollLeft;
+                scrollTop = lightboxContainer.scrollTop;
+            });
+
+            lightboxContainer.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+
+            lightboxContainer.addEventListener('touchmove', (e) => {
+                if (!isDragging || !lightboxContainer.classList.contains('zoomed')) return;
+                const x = e.touches[0].pageX - lightboxContainer.offsetLeft;
+                const y = e.touches[0].pageY - lightboxContainer.offsetTop;
+                const walkX = (x - startX) * 1.5;
+                const walkY = (y - startY) * 1.5;
+                lightboxContainer.scrollLeft = scrollLeft - walkX;
+                lightboxContainer.scrollTop = scrollTop - walkY;
+            });
+        })();
+    </script>
+</body>
+</html>
