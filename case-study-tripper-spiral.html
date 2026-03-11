@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripper Spiral Case Study - John-Erik Jordan</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/case-study.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           TRIPPER SPIRAL — PAGE-SPECIFIC STYLES
+           ============================================ */
+
+        /* Dark-themed hero override */
+        .case-study-hero--tripper-spiral {
+            background-color: #111;
+            background-image: url('images/tripper-spiral-hero.png');
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .case-study-hero--tripper-spiral::before {
+            background: linear-gradient(to right, rgba(17, 17, 17, 0.92) 0%, rgba(17, 17, 17, 0.85) 50%, rgba(17, 17, 17, 0.4) 100%);
+        }
+
+        .case-study-hero--tripper-spiral .hero-meta,
+        .case-study-hero--tripper-spiral .hero-title,
+        .case-study-hero--tripper-spiral .hero-role {
+            color: #f0ede6;
+        }
+
+        .case-study-hero--tripper-spiral .client-name {
+            color: #ff4e1a;
+        }
+
+        .case-study-hero--tripper-spiral .divider {
+            color: rgba(240, 237, 230, 0.4);
+        }
+
+        .case-study-hero--tripper-spiral .hero-live-link {
+            color: #00d4aa;
+        }
+
+        .case-study-hero--tripper-spiral .hero-live-link:hover {
+            border-bottom-color: #00d4aa;
+        }
+
+        .case-study-hero--tripper-spiral .hero-role {
+            opacity: 0.75;
+        }
+
+        /* Dark section variant */
+        .ts-dark-section {
+            background-color: #111;
+            color: #f0ede6;
+        }
+
+        .ts-dark-section .section-heading {
+            color: #f0ede6;
+        }
+
+        .ts-dark-section p,
+        .ts-dark-section li {
+            color: rgba(240, 237, 230, 0.85);
+            line-height: var(--leading-snug);
+        }
+
+        .ts-dark-section .lead-text {
+            color: #f0ede6;
+        }
+
+        /* Tripper Spiral accent colors */
+        .ts-accent {
+            color: #ff4e1a;
+        }
+
+        .ts-teal {
+            color: #00d4aa;
+        }
+
+        /* Premise block */
+        .ts-premise {
+            font-size: var(--text-xl);
+            line-height: var(--leading-snug);
+            max-width: 780px;
+            margin-bottom: var(--space-lg);
+        }
+
+        /* Video embed */
+        .ts-video-wrapper {
+            width: 100%;
+            max-width: 640px;
+            margin: var(--space-xl) auto;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(240, 237, 230, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .ts-video-wrapper video {
+            width: 100%;
+            display: block;
+        }
+
+        /* Mechanic callout */
+        .ts-mechanic-callout {
+            margin: var(--space-xl) 0;
+            padding: var(--space-lg);
+            border-left: 4px solid #ff4e1a;
+            background: rgba(255, 78, 26, 0.06);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .ts-mechanic-callout p {
+            margin: 0;
+            font-size: var(--text-lg);
+            font-style: italic;
+            color: rgba(240, 237, 230, 0.9) !important;
+        }
+
+        /* Improvement cards */
+        .ts-improvements {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .ts-improvement-item {
+            background: rgba(240, 237, 230, 0.05);
+            border: 1px solid rgba(240, 237, 230, 0.12);
+            border-radius: var(--border-radius);
+            padding: var(--space-lg);
+        }
+
+        .ts-improvement-number {
+            font-size: var(--text-sm);
+            font-weight: var(--font-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #ff4e1a;
+            margin-bottom: var(--space-sm);
+        }
+
+        .ts-improvement-item h4 {
+            font-size: var(--text-xl);
+            color: #f0ede6;
+            margin-bottom: var(--space-sm);
+        }
+
+        .ts-improvement-item p {
+            color: rgba(240, 237, 230, 0.8) !important;
+            line-height: var(--leading-snug);
+            margin: 0;
+        }
+
+        .ts-improvement-item .image-caption {
+            margin-top: var(--space-sm);
+        }
+
+        /* Tech table */
+        .ts-tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--text-sm);
+            margin-top: var(--space-lg);
+        }
+
+        .ts-tech-table th {
+            text-align: left;
+            padding: var(--space-sm) var(--space-md);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(240, 237, 230, 0.5);
+            border-bottom: 1px solid rgba(240, 237, 230, 0.1);
+        }
+
+        .ts-tech-table td {
+            padding: var(--space-sm) var(--space-md);
+            border-bottom: 1px solid rgba(240, 237, 230, 0.07);
+            vertical-align: top;
+        }
+
+        .ts-tech-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .ts-tech-table td:first-child {
+            color: rgba(240, 237, 230, 0.5);
+            width: 30%;
+            font-weight: var(--font-medium);
+        }
+
+        .ts-tech-table td:last-child {
+            color: rgba(240, 237, 230, 0.85);
+        }
+
+        /* CTA block */
+        .ts-cta {
+            text-align: center;
+            padding: var(--space-xxl) 0;
+            background: #111;
+        }
+
+        .ts-cta-link {
+            display: inline-block;
+            padding: var(--space-md) var(--space-xl);
+            background: #ff4e1a;
+            color: #111;
+            font-weight: var(--font-semibold);
+            font-size: var(--text-lg);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: all var(--transition-base);
+            letter-spacing: 0.03em;
+        }
+
+        .ts-cta-link:hover {
+            background: #e03e0f;
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        /* Image captions inherit correctly in dark sections */
+        .ts-dark-section .image-caption {
+            color: rgba(240, 237, 230, 0.5);
+        }
+
+        .ts-dark-section .case-study-image img {
+            border: 2px solid #ff4e1a;
+        }
+
+        /* Next project dark override */
+        .next-project--dark {
+            background: #0d0d0d;
+            border-top: 1px solid rgba(240, 237, 230, 0.08);
+        }
+
+        /* Image nested below text inside a card */
+        .ts-card-inner-image {
+            margin: var(--space-lg) 0 0;
+        }
+
+        /* Change 3: paragraph + image row — sits below the number + h4 */
+        .ts-card-body-row {
+            display: flex;
+            gap: var(--space-lg);
+            align-items: stretch;
+            margin-top: var(--space-sm);
+        }
+
+        .ts-card-body-left {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ts-card-body-text {
+            margin: 0;
+            color: rgba(240, 237, 230, 0.8) !important;
+            line-height: var(--leading-snug);
+        }
+
+        .ts-card-body-image {
+            flex: 2;
+        }
+
+        .ts-img-captioned img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 2px solid #ff4e1a;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .ts-img-captioned .image-caption {
+            display: block;
+            margin-top: var(--space-sm);
+        }
+
+        /* 4:3 cropped video inside the Change 3 left column */
+        .ts-card-video {
+            margin-top: auto;
+        }
+
+        .ts-video-crop {
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            border: 2px solid #ff4e1a;
+        }
+
+        .ts-video-crop video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+
+        @media (max-width: 767px) {
+            .ts-card-body-row {
+                flex-direction: column;
+            }
+
+            .ts-card-body-image {
+                margin-top: var(--space-md);
+            }
+        }
+
+        @media (min-width: 768px) {
+            /* Change 1: constrain and center image within card */
+            .ts-card-inner-image--constrained img {
+                width: auto;
+                max-width: 50%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body class="case-study-page">
+
+    <header class="site-header">
+        <nav class="main-nav">
+            <a href="index.html" class="logo">JOHN-ERIK JORDAN</a>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html#work">← Back to Work</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="case-study-hero case-study-hero--tripper-spiral">
+            <div class="container">
+                <div class="hero-meta">
+                    <span class="client-name">Experimental Project</span>
+                    <span class="divider">•</span>
+                    <span class="timeframe">March 2026 · Two sessions</span>
+                    <span class="divider">•</span>
+                    <a href="https://tripper-spiral.netlify.app/" target="_blank" rel="noopener noreferrer" class="hero-live-link">Try it live ↗</a>
+                </div>
+                <h1 class="hero-title">An instrument for exploring the edges of image model bias.</h1>
+                <div class="hero-role">
+                    <strong>My role:</strong> Solo — Concept, Design, Development, User Testing
+                </div>
+            </div>
+        </section>
+
+        <!-- The Premise -->
+        <section class="case-study-section ts-dark-section">
+            <div class="container">
+                <h2 class="section-heading">The Premise</h2>
+
+                <p class="ts-premise">
+                    Every image generation model hallucinates. When you ask one to show you something it can't see — what's around the corner, what's behind the subject, what's just outside the frame — it invents something. Usually this is treated as a flaw to suppress. <em>Tripper Spiral</em> chooses instead to go deep down that rabbit hole.
+                </p>
+
+                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); max-width: 780px; color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-lg);">
+                    The name plays on "trip" as both a journey and a hallucination. The spiral is what happens when you let an AI keep going and going. I suspect that asking an image model to look where it cannot see reveals something about its hidden mechanisms; much like when a human is put in a sensory deprivation tank. In the absence of suitable visual input and context, the pattern recognizer does not shut down, it actually goes into overdrive.
+                </p>
+
+                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); max-width: 780px; color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-xl);">
+                    The idea was to set up a chain of image generations where each invented frame becomes the sole input for the next, with no memory of the original. Upload any image. Ask Gemini to show what the scene looks like after the camera pans 90 degrees to the left, revealing what was previously off-screen. Take that output — without looking back at the original — and ask again. And again. By the time the camera has completed a full revolution, you're somewhere else entirely. Like a game of telephone, but visual. Like a camera on a turntable that keeps turning, revealing things that were never there.
+                </p>
+
+                <div class="case-study-image">
+                    <img src="images/tripper-spiral-filmstrip.png" alt="The filmstrip output view showing 35 generated frames of a Dutch landscape scene, with a large preview of the current frame, playback controls, and a speed selector" loading="lazy">
+                    <p class="image-caption">Frames generated sequentially and revealed as they arrive — the drift accumulates frame by frame</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Mechanic -->
+        <section class="case-study-section ts-dark-section" style="background-color: #0d0d0d;">
+            <div class="container">
+                <h2 class="section-heading">The Mechanic</h2>
+
+                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); max-width: 780px; color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-lg);">
+                    The implementation is a single architectural decision on repeat: each API call must receive only the immediately prior frame, in a fresh request, with no conversation history and no reference to the original image. If Gemini remembers where it started, the drift collapses. The hallucination only compounds if each generation is blind to everything except the last thing it invented.
+                </p>
+
+                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); max-width: 780px; color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-lg);">
+                    The prompt matters too. In the spec handed to Claude Code, it was marked architecturally significant and flagged never to be altered:
+                </p>
+
+                <div class="ts-mechanic-callout">
+                    <p>"Show what the scene looks like after the camera has panned 90 degrees to the left, revealing what was previously out of frame to the left side."</p>
+                </div>
+
+                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); max-width: 780px; color: rgba(240, 237, 230, 0.8); margin-top: var(--space-lg);">
+                    That phrasing directs Gemini to invent what was off-screen, not to rotate what was on-screen. The repetition and the specific camera-pan interpretation are the point. The misinterpretations are too.
+                </p>
+
+                <div class="case-study-image" style="margin-top: var(--space-xl);">
+                    <img src="images/tripper-spiral-prompt.png" alt="The Tripper Spiral prompt specification, marked as architecturally significant and flagged never to be altered in the Claude Code spec" loading="lazy">
+                    <p class="image-caption">The prompt — marked architecturally significant in the spec handed to Claude Code</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What It Became -->
+        <section class="case-study-section ts-dark-section">
+            <div class="container">
+                <h2 class="section-heading">What It Became</h2>
+
+                <p style="font-size: var(--text-xl); line-height: var(--leading-snug); max-width: 780px; color: #f0ede6; margin-bottom: var(--space-lg);">
+                    What shipped is a hallucination toy with an almost philosophical underpinning: an instrument for exploring what a model believes exists just outside the frame you show it.
+                </p>
+
+                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); max-width: 780px; color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-xl);">
+                    After user feedback, three changes shaped the final version:
+                </p>
+
+                <div class="ts-improvement-item" style="margin-bottom: var(--space-xl);">
+                    <div class="ts-improvement-number">Change 1</div>
+                    <h4>Wider Range</h4>
+                    <p>
+                        The original spec ranged from 4 to 16 steps. Users found the image hadn't shifted very much after so few steps. I increased the bottom of the range to 8 and the top to 32 — two full revolutions as the minimum, eight as the maximum. The interesting territory isn't in the first revolution; it's in what happens after the camera has already lost its way.
+                    </p>
+                    <div class="case-study-image ts-card-inner-image ts-card-inner-image--constrained">
+                        <img src="images/tripper-spiral-slider.png" alt="The Tripper Spiral upload interface showing a painting of Venice as the source image, a rotation slider set to 16 steps (four full revolutions), and a prominent Start the Spiral button" loading="lazy">
+                        <p class="image-caption">The upload interface — choose an image, set the number of rotations, start the spiral</p>
+                    </div>
+                </div>
+
+                <div class="ts-improvement-item" style="margin-bottom: var(--space-xl);">
+                    <div class="ts-improvement-number">Change 2</div>
+                    <h4>Keep Trippin'</h4>
+                    <p>
+                        The original "Keep Trippin'" reset the app and preloaded the last frame as a new starting image. Users disliked that the previous output was forgotten. The improved version continues the sequence in-place, appending new frames directly to the existing filmstrip. Run it again after a 32-step spiral and you have 64 frames. Run it a third time and you have 96. What started as a finite loop became genuinely open-ended.
+                    </p>
+                    <div class="case-study-image ts-card-inner-image">
+                        <img src="images/tripper-spiral-keep-trippin.png" alt="The filmstrip output showing frames 10 through 16 of a Venice canal scene, with a prominent orange Keep Trippin' button below to continue the sequence" loading="lazy">
+                        <p class="image-caption">Keep Trippin' — appends directly to the existing sequence rather than resetting</p>
+                    </div>
+                </div>
+
+                <div class="ts-improvement-item">
+                    <div class="ts-improvement-number">Change 3</div>
+                    <h4>Onboarding Modal</h4>
+                    <div class="ts-card-body-row">
+                        <div class="ts-card-body-left">
+                            <p class="ts-card-body-text">
+                                First-time visitors now land in an onboarding modal that explains the concept and plays a short demo video before they ever touch the upload interface. The API key prompt is part of the same flow — the model calls Google's Gemini API directly from the browser, requiring your own key.
+                            </p>
+                            <div class="ts-card-video">
+                                <div class="ts-video-crop">
+                                    <video controls preload="metadata">
+                                        <source src="videos/tripper-spiral-example.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ts-card-body-image">
+                            <div class="ts-img-captioned">
+                                <img src="images/tripper-spiral-api-key-modal.png" alt="The API key modal showing the 'What is Tripper Spiral?' onboarding section with a description of the concept and an embedded demo video" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="image-caption" style="text-align: center; margin-top: var(--space-md);">First-visit onboarding — concept, demo, and API key entry in one flow</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Stack -->
+        <section class="case-study-section ts-dark-section" style="background-color: #0d0d0d;">
+            <div class="container">
+                <h2 class="section-heading">Technical Stack</h2>
+
+                <table class="ts-tech-table">
+                    <thead>
+                        <tr>
+                            <th>Concern</th>
+                            <th>Decision</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Framework</td>
+                            <td>None — vanilla HTML/CSS/JS</td>
+                        </tr>
+                        <tr>
+                            <td>API</td>
+                            <td>Google Generative Language API v1beta</td>
+                        </tr>
+                        <tr>
+                            <td>Model</td>
+                            <td>gemini-2.5-flash-image</td>
+                        </tr>
+                        <tr>
+                            <td>Chain execution</td>
+                            <td>Sequential for-loop with await — never parallel</td>
+                        </tr>
+                        <tr>
+                            <td>Error strategy</td>
+                            <td>Fatal errors (404, 403, 429) stop the chain; transient failures retry ×2, then show inline</td>
+                        </tr>
+                        <tr>
+                            <td>Crossfade</td>
+                            <td>Two stacked absolute-positioned &lt;img&gt; elements with CSS opacity transition</td>
+                        </tr>
+                        <tr>
+                            <td>GIF encoding</td>
+                            <td>gif.js 0.2.0 via CDN; worker loaded via Blob URL to bypass cross-origin restriction</td>
+                        </tr>
+                        <tr>
+                            <td>API key storage</td>
+                            <td>localStorage — entered on first visit, never committed to source</td>
+                        </tr>
+                        <tr>
+                            <td>Deployment</td>
+                            <td>Static files; runs from file://, localhost, or any static host</td>
+                        </tr>
+                        <tr>
+                            <td>Build time</td>
+                            <td>Two sessions</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="ts-cta">
+            <div class="container">
+                <a href="https://tripper-spiral.netlify.app/" target="_blank" rel="noopener noreferrer" class="ts-cta-link">Try Tripper Spiral ↗</a>
+                <p style="color: rgba(240, 237, 230, 0.6); margin-top: var(--space-lg); font-size: 16px; margin-bottom: 0.25rem;">You'll need a Gemini API key. Free to get at Google AI Studio.</p>
+                <p style="color: rgba(240, 237, 230, 0.45); font-size: 14px; margin: 0;">Image generation requires billing to be enabled on your Google account.</p>
+            </div>
+        </section>
+
+        <!-- Next Project Navigation -->
+        <section class="next-project next-project--dark">
+            <div class="container">
+                <a href="case-study-design-annotator.html" class="next-project-link">
+                    <div class="next-label">Next Project</div>
+                    <h3 class="next-title">Building the Tool I Always Needed →</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 John-Erik Jordan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Lightbox functionality
+        (function() {
+            const lightboxHTML = `
+                <div class="lightbox" id="lightbox">
+                    <button class="lightbox-close" aria-label="Close lightbox"></button>
+                    <div class="lightbox-content">
+                        <div class="lightbox-image-container" id="lightbox-container">
+                            <img class="lightbox-image" id="lightbox-image" src="" alt="">
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxContainer = document.getElementById('lightbox-container');
+            const closeBtn = document.querySelector('.lightbox-close');
+
+            let isDragging = false;
+            let startX, startY, scrollLeft, scrollTop;
+
+            document.querySelectorAll('.case-study-image img').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImage.src = img.src;
+                    lightboxImage.alt = img.alt;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    lightboxContainer.classList.remove('zoomed');
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+                lightboxContainer.classList.remove('zoomed');
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox || e.target === lightboxContainer) {
+                    if (!lightboxContainer.classList.contains('zoomed')) {
+                        closeLightbox();
+                    }
+                }
+            });
+
+            lightboxImage.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (lightboxContainer.classList.contains('zoomed')) {
+                    lightboxContainer.classList.remove('zoomed');
+                    lightboxContainer.scrollTo(0, 0);
+                } else {
+                    lightboxContainer.classList.add('zoomed');
+                    setTimeout(() => {
+                        const scrollX = (lightboxContainer.scrollWidth - lightboxContainer.clientWidth) / 2;
+                        const scrollY = (lightboxContainer.scrollHeight - lightboxContainer.clientHeight) / 2;
+                        lightboxContainer.scrollTo(scrollX, scrollY);
+                    }, 50);
+                }
+            });
+
+            lightboxContainer.addEventListener('mousedown', (e) => {
+                if (!lightboxContainer.classList.contains('zoomed')) return;
+                isDragging = true;
+                lightboxContainer.classList.add('dragging');
+                startX = e.pageX - lightboxContainer.offsetLeft;
+                startY = e.pageY - lightboxContainer.offsetTop;
+                scrollLeft = lightboxContainer.scrollLeft;
+                scrollTop = lightboxContainer.scrollTop;
+            });
+
+            lightboxContainer.addEventListener('mouseleave', () => {
+                isDragging = false;
+                lightboxContainer.classList.remove('dragging');
+            });
+
+            lightboxContainer.addEventListener('mouseup', () => {
+                isDragging = false;
+                lightboxContainer.classList.remove('dragging');
+            });
+
+            lightboxContainer.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - lightboxContainer.offsetLeft;
+                const y = e.pageY - lightboxContainer.offsetTop;
+                const walkX = (x - startX) * 1.5;
+                const walkY = (y - startY) * 1.5;
+                lightboxContainer.scrollLeft = scrollLeft - walkX;
+                lightboxContainer.scrollTop = scrollTop - walkY;
+            });
+
+            lightboxContainer.addEventListener('touchstart', (e) => {
+                if (!lightboxContainer.classList.contains('zoomed')) return;
+                isDragging = true;
+                startX = e.touches[0].pageX - lightboxContainer.offsetLeft;
+                startY = e.touches[0].pageY - lightboxContainer.offsetTop;
+                scrollLeft = lightboxContainer.scrollLeft;
+                scrollTop = lightboxContainer.scrollTop;
+            });
+
+            lightboxContainer.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+
+            lightboxContainer.addEventListener('touchmove', (e) => {
+                if (!isDragging || !lightboxContainer.classList.contains('zoomed')) return;
+                const x = e.touches[0].pageX - lightboxContainer.offsetLeft;
+                const y = e.touches[0].pageY - lightboxContainer.offsetTop;
+                const walkX = (x - startX) * 1.5;
+                const walkY = (y - startY) * 1.5;
+                lightboxContainer.scrollLeft = scrollLeft - walkX;
+                lightboxContainer.scrollTop = scrollTop - walkY;
+            });
+        })();
+    </script>
+</body>
+</html>
