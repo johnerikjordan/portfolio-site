@@ -133,6 +133,37 @@ strong {
 }
 
 /* ============================================
+   SKIP LINK (Accessibility)
+   ============================================ */
+.skip-to-main {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: 9999;
+    text-decoration: none;
+}
+
+.skip-to-main:focus {
+    position: fixed;
+    top: var(--space-sm);
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    overflow: visible;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-primary);
+    color: white;
+    font-weight: var(--font-semibold);
+    border-radius: var(--border-radius);
+    font-size: var(--text-base);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
    LAYOUT UTILITIES
    ============================================ */
 .container {

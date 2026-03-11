@@ -11,9 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body class="case-study-page">
-    
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
     <header class="site-header">
-        <nav class="main-nav">
+        <nav class="main-nav" aria-label="Main navigation">
             <a href="index.html" class="logo">JOHN-ERIK JORDAN</a>
             <button class="hamburger" aria-label="Toggle navigation menu">
                 <span></span>
@@ -27,7 +28,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="case-study-hero case-study-hero--smart-agency">
             <div class="container">
@@ -49,8 +50,8 @@
         <!-- Context -->
         <section class="case-study-section context-section">
             <div class="container">
-                <div class="context-arrow">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="context-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -61,8 +62,8 @@
                     before the product went live, but I saw three major flaws with the MVP that was
                     about to be released.
                 </p>
-                <div class="context-arrow">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="context-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <line x1="19" y1="12" x2="5" y2="12"></line>
                         <polyline points="12 19 5 12 12 5"></polyline>
                     </svg>
@@ -277,7 +278,7 @@
                         </div>
                         
                         <div class="insight-box">
-                            <h4>Critical Insight</h4>
+                            <h3>Critical Insight</h3>
                             <p>
                                 The highest drop-off rates occurred on the steps I had first flagged 
                                 and proposed alternatives for.
@@ -309,7 +310,7 @@
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4>Approval</h4>
+                                <h3>Approval</h3>
                                 <p>
                                     My re-proposed onboarding flow was approved by all stakeholders a 
                                     month after the product launch.
@@ -320,7 +321,7 @@
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4>Implementation</h4>
+                                <h3>Implementation</h3>
                                 <p>
                                     All four product streams worked on all cylinders for three sprints 
                                     in order to implement all the necessary changes to the front end and back end.
@@ -335,7 +336,7 @@
                         <div class="timeline-item success">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4>Impact</h4>
+                                <h3>Impact</h3>
                                 <div class="big-stat">
                                     <div class="stat-number large">935%</div>
                                     <p class="stat-description">
@@ -357,7 +358,7 @@
                 
                 <div class="takeaways-grid">
                     <div class="takeaway-item">
-                        <h4>Data Changes Minds</h4>
+                        <h3>Data Changes Minds</h3>
                         <p>
                             When stakeholders aren't initially receptive to UX recommendations, 
                             real-world data from launch can reframe the conversation entirely.
@@ -365,7 +366,7 @@
                     </div>
                     
                     <div class="takeaway-item">
-                        <h4>Trust Must Be Earned</h4>
+                        <h3>Trust Must Be Earned</h3>
                         <p>
                             For unknown brands, asking for payment before demonstrating value 
                             creates an insurmountable barrier. Show first, ask later.
@@ -373,7 +374,7 @@
                     </div>
                     
                     <div class="takeaway-item">
-                        <h4>Persistence Pays Off</h4>
+                        <h3>Persistence Pays Off</h3>
                         <p>
                             Being willing to re-pitch a rejected proposal when circumstances change 
                             is crucial. The best idea at the wrong time needs patience.

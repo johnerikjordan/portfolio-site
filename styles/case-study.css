@@ -555,7 +555,7 @@
     border-radius: var(--border-radius);
 }
 
-.insight-box h4 {
+.insight-box h3 {
     font-size: var(--text-lg);
     font-weight: var(--font-semibold);
     margin-bottom: var(--space-sm);
@@ -626,7 +626,7 @@
     display: none;
 }
 
-.timeline-content h4 {
+.timeline-content h3 {
     color: white;
     font-size: var(--text-lg);
     margin-bottom: var(--space-sm);
@@ -704,6 +704,7 @@
     border: 1px solid var(--color-border);
 }
 
+.takeaway-item h3:not(.problem-title),
 .takeaway-item h4 {
     font-size: var(--text-lg);
     margin-bottom: var(--space-sm);

@@ -11,9 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body class="case-study-page">
-    
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
     <header class="site-header">
-        <nav class="main-nav">
+        <nav class="main-nav" aria-label="Main navigation">
             <a href="index.html" class="logo">JOHN-ERIK JORDAN</a>
             <button class="hamburger" aria-label="Toggle navigation menu">
                 <span></span>
@@ -27,7 +28,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="case-study-hero case-study-hero--strato">
             <div class="container">
@@ -49,8 +50,8 @@
         <!-- Context -->
         <section class="case-study-section context-section">
             <div class="container">
-                <div class="context-arrow">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="context-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -61,8 +62,8 @@
                     visually stimulating and easy to understand—presented as a football league where each
                     municipality competes for the "net growth cup."
                 </p>
-                <div class="context-arrow">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="context-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <line x1="19" y1="12" x2="5" y2="12"></line>
                         <polyline points="12 19 5 12 12 5"></polyline>
                     </svg>
@@ -201,7 +202,7 @@
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4>Design System Delivered</h4>
+                                <h3>Design System Delivered</h3>
                                 <p>
                                     Created complete Figma designs for homepage, district landing pages, blog 
                                     templates, and all interactive components across three viewport sizes.
@@ -212,7 +213,7 @@
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4>Development Handoff</h4>
+                                <h3>Development Handoff</h3>
                                 <p>
                                     Provided comprehensive style guide with typography systems, color definitions, 
                                     spacing guidelines, and component specifications for consistent implementation.
@@ -223,7 +224,7 @@
                         <div class="timeline-item success">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4>Impact</h4>
+                                <h3>Impact</h3>
                                 <div class="big-stat">
                                     <div class="stat-number large">2x</div>
                                     <p class="stat-description">
@@ -246,7 +247,7 @@
                 
                 <div class="takeaways-grid">
                     <div class="takeaway-item">
-                        <h4>Data Storytelling</h4>
+                        <h3>Data Storytelling</h3>
                         <p>
                             The right visual metaphor can transform boring data into an engaging narrative 
                             that people want to explore and share.
@@ -254,7 +255,7 @@
                     </div>
                     
                     <div class="takeaway-item">
-                        <h4>Systematic Approach</h4>
+                        <h3>Systematic Approach</h3>
                         <p>
                             Starting with structure (sitemap and wireframes) before visual design prevented 
                             costly rework and ensured all requirements were met.
@@ -262,7 +263,7 @@
                     </div>
                     
                     <div class="takeaway-item">
-                        <h4>Design Systems Matter</h4>
+                        <h3>Design Systems Matter</h3>
                         <p>
                             Comprehensive component documentation enabled smooth development handoff and
                             maintained design consistency across the entire site.
@@ -281,9 +282,9 @@
         <!-- Next Project Navigation -->
         <section class="next-project">
             <div class="container">
-                <a href="case-study-inpera.html" class="next-project-link">
+                <a href="case-study-design-system.html" class="next-project-link">
                     <div class="next-label">Next Project</div>
-                    <h3 class="next-title">Making Construction Tendering Actually Digital for Inpera →</h3>
+                    <h3 class="next-title">Building a Design System That Scaled to 10 Brands →</h3>
                 </a>
             </div>
         </section>

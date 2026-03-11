@@ -11,9 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body class="case-study-page">
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
     <header class="site-header">
-        <nav class="main-nav">
+        <nav class="main-nav" aria-label="Main navigation">
             <a href="index.html" class="logo">JOHN-ERIK JORDAN</a>
             <button class="hamburger" aria-label="Toggle navigation menu">
                 <span></span>
@@ -27,7 +28,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="case-study-hero case-study-hero--design-annotator">
             <div class="container">
@@ -48,8 +49,8 @@
         <!-- Context -->
         <section class="case-study-section context-section">
             <div class="container">
-                <div class="context-arrow">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="context-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -57,8 +58,8 @@
                 <p class="intro-text">
                     Once a design leaves Figma, feedback collection falls apart — email threads, Slack messages, CMS comments, screenshots in documents. I built Design Annotator to fix that.
                 </p>
-                <div class="context-arrow">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="context-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <line x1="19" y1="12" x2="5" y2="12"></line>
                         <polyline points="12 19 5 12 12 5"></polyline>
                     </svg>
@@ -261,7 +262,7 @@
                         </div>
                     </div>
 
-                    <h4 style="font-size: var(--text-xl); margin-bottom: var(--space-md); font-weight: var(--font-semibold);">Key decisions that worked:</h4>
+                    <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-md); font-weight: var(--font-semibold);">Key decisions that worked:</h3>
                     <ul style="list-style: none; padding-left: 0;">
                         <li style="padding: var(--space-sm) 0; padding-left: calc(var(--space-md) + 0.5rem); position: relative; line-height: var(--leading-snug);">
                             <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: bold;">→</span>
@@ -302,7 +303,7 @@
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4>What Was Built</h4>
+                                <h3>What Was Built</h3>
                                 <p>
                                     A production-ready staging annotation tool: <strong>password protection</strong>, <strong>real-time sync</strong>, <strong>DOM-anchored pins</strong>, <strong>pin clustering</strong>, <strong>threaded replies</strong>, <strong>a chronological shelf feed</strong>, <strong>cross-page navigation</strong>, three-state comment management, and admin controls — deployed to Netlify and reusable across any client project.
                                 </p>
@@ -312,7 +313,7 @@
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4>Replacing Paid SaaS</h4>
+                                <h3>Replacing Paid SaaS</h3>
                                 <p>
                                     Replaces Marker.io, Pastel, and BugHerd — which charge <strong>$50–100/month</strong> and require stakeholder accounts — with a bespoke tool I own, control, and can extend.
                                 </p>
@@ -325,7 +326,7 @@
                         <div class="timeline-item success">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4>Time to Working Prototype</h4>
+                                <h3>Time to Working Prototype</h3>
                                 <div class="big-stat">
                                     <p class="stat-description">
                                         <strong>Three afternoons</strong> from concept to live, tested, production-ready tool — including spec, database setup, build, and security review.
@@ -350,21 +351,21 @@
 
                 <div class="takeaways-grid">
                     <div class="takeaway-item">
-                        <h4>JIRA Integration</h4>
+                        <h3>JIRA Integration</h3>
                         <p>
                             Convert any comment — with its DOM selector context — directly into a bug ticket or feature request, pre-populated with element information and a link back to the staging page.
                         </p>
                     </div>
 
                     <div class="takeaway-item">
-                        <h4>Slack / Teams Integration</h4>
+                        <h3>Slack / Teams Integration</h3>
                         <p>
                             Push notifications to a dedicated channel when new comments are added, so the team doesn't need to actively monitor the tool.
                         </p>
                     </div>
 
                     <div class="takeaway-item">
-                        <h4>Email Notifications</h4>
+                        <h3>Email Notifications</h3>
                         <p>
                             For stakeholders who aren't in Slack — ensuring no comment goes unnoticed regardless of how the team communicates.
                         </p>
@@ -381,35 +382,35 @@
 
                 <div class="takeaways-grid">
                     <div class="takeaway-item">
-                        <h4>1. Spec work is design work</h4>
+                        <h3>1. Spec work is design work</h3>
                         <p>
                             Spending the first afternoon on architecture decisions and a detailed build spec — rather than opening a code editor — is what made three afternoons sufficient.
                         </p>
                     </div>
 
                     <div class="takeaway-item">
-                        <h4>2. AI as a thinking partner, not just a code generator</h4>
+                        <h3>2. AI as a thinking partner, not just a code generator</h3>
                         <p>
                             The most valuable AI interactions were structured conversations about requirements and edge cases — not the code generation itself. Claude Code is fast. The spec work is what made it accurate.
                         </p>
                     </div>
 
                     <div class="takeaway-item">
-                        <h4>3. Owning your tools has compounding value</h4>
+                        <h3>3. Owning your tools has compounding value</h3>
                         <p>
                             A bespoke tool can be extended in ways a SaaS subscription cannot. JIRA integration, Slack notifications, and client-specific customisation are all on the roadmap.
                         </p>
                     </div>
 
                     <div class="takeaway-item">
-                        <h4>4. Security is a design problem</h4>
+                        <h3>4. Security is a design problem</h3>
                         <p>
                             The admin password model, what the public readme exposes, CORS restrictions — these are all design decisions. Treating the security review as a named phase is what makes it actually happen.
                         </p>
                     </div>
 
                     <div class="takeaway-item">
-                        <h4>5. Fifteen years of pain is good product research</h4>
+                        <h3>5. Fifteen years of pain is good product research</h3>
                         <p>
                             I've encountered the fragmented staging feedback problem across editorial, agency, and product roles for fifteen years. That lived context made the requirements clear before any stakeholder interviews were needed.
                         </p>

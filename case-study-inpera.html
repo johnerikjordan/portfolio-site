@@ -11,9 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body class="case-study-page">
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
     <header class="site-header">
-        <nav class="main-nav">
+        <nav class="main-nav" aria-label="Main navigation">
             <a href="index.html" class="logo">JOHN-ERIK JORDAN</a>
             <button class="hamburger" aria-label="Toggle navigation menu">
                 <span></span>
@@ -27,7 +28,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="case-study-hero case-study-hero--inpera">
             <div class="container">
@@ -49,8 +50,8 @@
         <!-- Context -->
         <section class="case-study-section context-section">
             <div class="container">
-                <div class="context-arrow">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="context-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
@@ -58,8 +59,8 @@
                 <p class="intro-text">
                     In 2022, Inpera set out to digitize construction tendering—a notoriously complex, multi-stakeholder process that had resisted digitization for decades.
                 </p>
-                <div class="context-arrow">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="context-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <line x1="19" y1="12" x2="5" y2="12"></line>
                         <polyline points="12 19 5 12 12 5"></polyline>
                     </svg>
@@ -155,7 +156,7 @@
                                 <img src="images/inpera-add-product-03.jpg" alt="Old workflow vs. new workflow showing inline product addition">
                             </div>
                             <div class="case-study-image" style="text-align: center;">
-                                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1); max-width: 100%;" width="100%" height="800" src="https://embed.figma.com/proto/FW2r0yqEudTb1Q2RdoYkrx/inpera---ALL-inpera-UI-designs?page-id=31%3A30061&node-id=31-32006&viewport=782%2C3047%2C0.19&scaling=scale-down&content-scaling=fixed&starting-point-node-id=31%3A32006&show-proto-sidebar=0&embed-host=share" allowfullscreen></iframe>
+                                <iframe title="Interactive Figma prototype: inline product addition workflow for construction tendering" style="border: 1px solid rgba(0, 0, 0, 0.1); max-width: 100%;" width="100%" height="800" src="https://embed.figma.com/proto/FW2r0yqEudTb1Q2RdoYkrx/inpera---ALL-inpera-UI-designs?page-id=31%3A30061&node-id=31-32006&viewport=782%2C3047%2C0.19&scaling=scale-down&content-scaling=fixed&starting-point-node-id=31%3A32006&show-proto-sidebar=0&embed-host=share" allowfullscreen></iframe>
                             </div>
                             <p class="reframe-text" style="margin-top: var(--space-md);">
                                 <strong>Results:</strong> Time on task: 18 min → 15 min (matching analog speed for the first time!). Task completion: 20% → 45%. We'd achieved parity with analog.
@@ -229,7 +230,7 @@
 
             <div class="container">
                 <div class="turning-point-content">
-                    <h4 style="font-size: var(--text-xl); margin-bottom: var(--space-md); font-weight: var(--font-semibold);">Key decisions that worked:</h4>
+                    <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-md); font-weight: var(--font-semibold);">Key decisions that worked:</h3>
                     <ul style="list-style: none; padding-left: 0;">
                         <li style="padding: var(--space-sm) 0; padding-left: calc(var(--space-md) + 0.5rem); position: relative; line-height: var(--leading-snug);">
                             <span style="position: absolute; left: 0; color: var(--color-primary); font-weight: bold;">→</span>
@@ -269,7 +270,7 @@
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4>User Metrics</h4>
+                                <h3>User Metrics</h3>
                                 <p>
                                     <strong>60% task completion rate</strong> (up from 10%)—managers + ~half their team members actively using platform
                                 </p>
@@ -285,7 +286,7 @@
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4>Business Impact</h4>
+                                <h3>Business Impact</h3>
                                 <p>
                                     Pilot success enabled transition from discounted pilot program to paying customers
                                 </p>
@@ -301,7 +302,7 @@
                         <div class="timeline-item success">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4>What Happened to Inpera</h4>
+                                <h3>What Happened to Inpera</h3>
                                 <div class="big-stat">
                                     <p class="stat-description">
                                         Acquired by competitor Roobeo, rebranded as Conpur. My design and architecture continued in merged platform. Conpur recently acquired by Billie.de, now part of their SaaS ecosystem.
@@ -321,35 +322,35 @@
 
                 <div class="takeaways-grid">
                     <div class="takeaway-item">
-                        <h4>1. Domain complexity requires deep research</h4>
+                        <h3>1. Domain complexity requires deep research</h3>
                         <p>
                             Users didn't know what they needed because they'd never seen an alternative to email/PDF chaos. Ethnographic site visits revealed the real workflow pain points that interviews alone wouldn't have caught.
                         </p>
                     </div>
 
                     <div class="takeaway-item">
-                        <h4>2. Versatility matters in small teams</h4>
+                        <h3>2. Versatility matters in small teams</h3>
                         <p>
                             When PM and QA were both unavailable, the product didn't stop. I researched analytics tools, co-ran sprints, prioritized tickets, and kept development moving—proving I could wear multiple hats when needed.
                         </p>
                     </div>
 
                     <div class="takeaway-item">
-                        <h4>3. Data breaks stalemates</h4>
+                        <h3>3. Data breaks stalemates</h3>
                         <p>
                             "The backend is fine" vs. "users say it's slow" was an unsolvable argument until Sentry provided objective metrics. Sometimes the designer's job is identifying what data you need, not just designing interfaces.
                         </p>
                     </div>
 
                     <div class="takeaway-item">
-                        <h4>4. Beating analog is the real success metric</h4>
+                        <h3>4. Beating analog is the real success metric</h3>
                         <p>
                             Getting to parity (15 min task time) felt like success, but the real win was exceeding analog (10 min). Digital transformation only works when it's genuinely better than the old way.
                         </p>
                     </div>
 
                     <div class="takeaway-item">
-                        <h4>5. Crisis management reveals capabilities</h4>
+                        <h3>5. Crisis management reveals capabilities</h3>
                         <p>
                             The 3-month PM gap could have derailed the product. Instead, it proved I could handle strategic product work—feature prioritization, sprint planning, stakeholder communication—while maintaining design quality.
                         </p>
@@ -365,9 +366,9 @@
         <!-- Next Project Navigation -->
         <section class="next-project">
             <div class="container">
-                <a href="case-study-design-system.html" class="next-project-link">
+                <a href="case-study-babbel.html" class="next-project-link">
                     <div class="next-label">Next Project</div>
-                    <h3 class="next-title">Design System Evolution at STRATO →</h3>
+                    <h3 class="next-title">Journey Toward Design Leadership at Babbel →</h3>
                 </a>
             </div>
         </section>

@@ -85,7 +85,6 @@
         .ts-premise {
             font-size: var(--text-xl);
             line-height: var(--leading-snug);
-            max-width: 780px;
             margin-bottom: var(--space-lg);
         }
 
@@ -145,7 +144,7 @@
             margin-bottom: var(--space-sm);
         }
 
-        .ts-improvement-item h4 {
+        .ts-improvement-item h3 {
             font-size: var(--text-xl);
             color: #f0ede6;
             margin-bottom: var(--space-sm);
@@ -326,9 +325,10 @@
     </style>
 </head>
 <body class="case-study-page">
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
     <header class="site-header">
-        <nav class="main-nav">
+        <nav class="main-nav" aria-label="Main navigation">
             <a href="index.html" class="logo">JOHN-ERIK JORDAN</a>
             <button class="hamburger" aria-label="Toggle navigation menu">
                 <span></span>
@@ -342,7 +342,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="case-study-hero case-study-hero--tripper-spiral">
             <div class="container">
@@ -369,11 +369,11 @@
                     Every image generation model hallucinates. When you ask one to show you something it can't see — what's around the corner, what's behind the subject, what's just outside the frame — it invents something. Usually this is treated as a flaw to suppress. <em>Tripper Spiral</em> chooses instead to go deep down that rabbit hole.
                 </p>
 
-                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); max-width: 780px; color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-lg);">
+                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-lg);">
                     The name plays on "trip" as both a journey and a hallucination. The spiral is what happens when you let an AI keep going and going. I suspect that asking an image model to look where it cannot see reveals something about its hidden mechanisms; much like when a human is put in a sensory deprivation tank. In the absence of suitable visual input and context, the pattern recognizer does not shut down, it actually goes into overdrive.
                 </p>
 
-                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); max-width: 780px; color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-xl);">
+                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-xl);">
                     The idea was to set up a chain of image generations where each invented frame becomes the sole input for the next, with no memory of the original. Upload any image. Ask Gemini to show what the scene looks like after the camera pans 90 degrees to the left, revealing what was previously off-screen. Take that output — without looking back at the original — and ask again. And again. By the time the camera has completed a full revolution, you're somewhere else entirely. Like a game of telephone, but visual. Like a camera on a turntable that keeps turning, revealing things that were never there.
                 </p>
 
@@ -389,11 +389,11 @@
             <div class="container">
                 <h2 class="section-heading">The Mechanic</h2>
 
-                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); max-width: 780px; color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-lg);">
+                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-lg);">
                     The implementation is a single architectural decision on repeat: each API call must receive only the immediately prior frame, in a fresh request, with no conversation history and no reference to the original image. If Gemini remembers where it started, the drift collapses. The hallucination only compounds if each generation is blind to everything except the last thing it invented.
                 </p>
 
-                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); max-width: 780px; color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-lg);">
+                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); color: rgba(240, 237, 230, 0.8); margin-bottom: var(--space-lg);">
                     The prompt matters too. In the spec handed to Claude Code, it was marked architecturally significant and flagged never to be altered:
                 </p>
 
@@ -401,7 +401,7 @@
                     <p>"Show what the scene looks like after the camera has panned 90 degrees to the left, revealing what was previously out of frame to the left side."</p>
                 </div>
 
-                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); max-width: 780px; color: rgba(240, 237, 230, 0.8); margin-top: var(--space-lg);">
+                <p style="font-size: var(--text-lg); line-height: var(--leading-snug); color: rgba(240, 237, 230, 0.8); margin-top: var(--space-lg);">
                     That phrasing directs Gemini to invent what was off-screen, not to rotate what was on-screen. The repetition and the specific camera-pan interpretation are the point. The misinterpretations are too.
                 </p>
 
@@ -417,7 +417,7 @@
             <div class="container">
                 <h2 class="section-heading">What It Became</h2>
 
-                <p style="font-size: var(--text-xl); line-height: var(--leading-snug); max-width: 780px; color: #f0ede6; margin-bottom: var(--space-lg);">
+                <p style="font-size: var(--text-xl); line-height: var(--leading-snug); color: #f0ede6; margin-bottom: var(--space-lg);">
                     What shipped is a hallucination toy with an almost philosophical underpinning: an instrument for exploring what a model believes exists just outside the frame you show it.
                 </p>
 
@@ -427,7 +427,7 @@
 
                 <div class="ts-improvement-item" style="margin-bottom: var(--space-xl);">
                     <div class="ts-improvement-number">Change 1</div>
-                    <h4>Wider Range</h4>
+                    <h3>Wider Range</h3>
                     <p>
                         The original spec ranged from 4 to 16 steps. Users found the image hadn't shifted very much after so few steps. I increased the bottom of the range to 8 and the top to 32 — two full revolutions as the minimum, eight as the maximum. The interesting territory isn't in the first revolution; it's in what happens after the camera has already lost its way.
                     </p>
@@ -439,7 +439,7 @@
 
                 <div class="ts-improvement-item" style="margin-bottom: var(--space-xl);">
                     <div class="ts-improvement-number">Change 2</div>
-                    <h4>Keep Trippin'</h4>
+                    <h3>Keep Trippin'</h3>
                     <p>
                         The original "Keep Trippin'" reset the app and preloaded the last frame as a new starting image. Users disliked that the previous output was forgotten. The improved version continues the sequence in-place, appending new frames directly to the existing filmstrip. Run it again after a 32-step spiral and you have 64 frames. Run it a third time and you have 96. What started as a finite loop became genuinely open-ended.
                     </p>
@@ -451,7 +451,7 @@
 
                 <div class="ts-improvement-item">
                     <div class="ts-improvement-number">Change 3</div>
-                    <h4>Onboarding Modal</h4>
+                    <h3>Onboarding Modal</h3>
                     <div class="ts-card-body-row">
                         <div class="ts-card-body-left">
                             <p class="ts-card-body-text">
@@ -459,7 +459,7 @@
                             </p>
                             <div class="ts-card-video">
                                 <div class="ts-video-crop">
-                                    <video controls preload="metadata">
+                                    <video controls preload="metadata" aria-label="Demo of Tripper Spiral generating frames — showing a Venice painting drift across four full rotations">
                                         <source src="videos/tripper-spiral-example.mp4" type="video/mp4">
                                     </video>
                                 </div>
